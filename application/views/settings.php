@@ -1,8 +1,6 @@
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/settings.css'?>"/>
 <?php include "components/header.php"; ?>
-<?php include "components/sidenav.php"; ?>
-
-    
+<?php include "components/sidenav.php"; ?> 
     
     <div class="nav">
       <div><img src="<?php echo BASEURL.'/public/assets/img/tuat.png'?>" alt=""></div>

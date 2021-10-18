@@ -49,7 +49,9 @@
     <div class="info">
       <button class="notifi"><i class="far fa-bell"></i></button>
       <div class="user_image">
-        <img src="<?php echo BASEURL.'/public/assets/img/tuat.png'?>" alt=""></img>
+        <a href="<?php echo BASEURL.'/settings'?>">
+          <img src="<?php echo BASEURL.'/public/assets/img/tuat.png'?>" alt="">
+        </a>
       </div>
       <div class="user_name"><?php echo "Mrs. ".$_SESSION['first_name']." ".$_SESSION['last_name']?></div>
       <div id="user-role"><?php echo $_SESSION['title']?></div>

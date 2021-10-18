@@ -3,8 +3,8 @@
 <?php include "components/sidenav.php"; ?>
     
     <div class="nav">
-      <a class="activ" href="<?php echo BASEURL.'/patientHome/articles'?>">Articles</a>
-      <a href="<?php echo BASEURL.'/patientHome/testTypes'?>">Test types</a>
+      <a href="<?php echo BASEURL.'/patientHome/articles'?>">Articles</a>
+      <a class="activ" href="<?php echo BASEURL.'/patientHome/testTypes'?>">Test types</a>
     </div>
 
     <div class="main">
