@@ -336,7 +336,7 @@ p #date{
   bottom: 0;
   width: 80%;
   height: 80%;
-  border-top:2px solid #a8a8a8;
+  /* border-top:2px solid #a8a8a8; */
   font-family: 'Roboto', sans-serif;
 
 }  

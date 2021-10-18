@@ -1,10 +1,12 @@
-<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/settings.css'?>"/>
 <?php include "components/header.php"; ?>
 <?php include "components/sidenav.php"; ?> 
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/settings.css'?>"/>    
     
-    <div class="nav">
-      <div><img src="<?php echo BASEURL.'/public/assets/img/tuat.png'?>" alt=""></div>
-    </div>
+      <div class="circle">
+        <img src="<?php echo BASEURL.'/public/assets/img/tuat.png'?>" alt="">
+        <i class="fas fa-camera upload-button"></i>   
+      </div>
+    
 
     <div class="main">
       <div class="box">
