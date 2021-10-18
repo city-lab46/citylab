@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,300&family=Roboto&display=swap');
+*{
+    box-sizing: border-box;
+}
+body {
+    background: rgb(204,204,204); 
+    font-family: "Roboto" sans-serif;
+  }
+  page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+  }
+  page[size="A4"] {  
+    width: 21cm;
+    height: 29.7cm; 
+  }
+
+  .header img{
+    position: absolute;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 270px;
+    width: 5%;
+  }
+  .header h1{
+      position: absolute;
+      color: #1281BF;
+      margin-top: 20px;
+      margin-left: 350px;
+      font-size: 36px;
+
+  }
+  .address{
+      position: absolute;
+      margin-top: 75px;
+      margin-left: 270px;
+      text-align: center;
+      font-size: 12px;
+  }
+  hr.solid{
+    border-top: 1px solid #1281BF;
+  }
+  .deta{
+      position: absolute;
+      margin-top: 140px;
+      margin-left:5px;
+      margin-right: 285px;
+      height: 25%;
+      /*border-top: 2px solid #1281BF;*/
+      font-size: 12px;
+  }
+  .column{
+      
+      float: left;
+      width: 40%;
+      padding: 10px;
+      
+      margin-left: 50px;
+  }
+  .deta:after{
+      content: "";
+      display: table;
+      clear: both;
+  }
+  .column td{
+      width: 170px;
+  }
+  .column tr{
+      height: 20px;
+  }
+  
+  
+  .bar{
+    
+    position: absolute;
+    height: 20px;
+    left: 290px;
+    top: 260px;
+    right: 290px;
+    background: rgba(18, 129, 191, 0.98);
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+  .table{
+    height: 60%;
+  }
+  .report{
+      position: absolute;
+    margin-left: 100px;
+    margin-right: 150px;
+      margin-top: 290px;
+     
+    color: rgba(0, 0, 0, 0.65);
+    font-size: 12px;
+  }
+
+  .report th{
+      text-align: left;
+      width: 160px;
+      height: 30px;
+  }
+  .footer{
+      position: absolute;
+      height: 20%;
+      top: 26cm;
+      left: 290px;
+      right: 290px;
+  }
+  .column1{
+      
+    float: left;
+    width: 40%;
+    padding: 10px;
+    font-size: 12px;
+    margin-left: 50px;
+    color: rgba(0, 0, 0, 0.65);
+    text-align: left;
+}
+@media screen and (max-width: 1000px){
+  .deta{
+    margin-right: 110px;
+  }
+  .bar{
+  
+    left: 110px;
+    right: 110px;   
+  }
+  .footer{
+    
+    left: 110px;
+    right: 110px;
+}
+
+}
+@media screen and (max-width: 850px) {
+  
+  h1{
+    width:100%;
+  }
+
+  .deta{
+    margin-right: 30px;
+  }
+  .bar{
+  
+    left: 30px;
+    right: 30px;   
+  }
+  .footer{
+    
+    left: 30px;
+    right: 30px;
+}
+.header img{
+ 
+  margin-top: 20px;
+  margin-left: 300px;
+  
+}
+.report{
+  
+margin-left: 50px;
+margin-right: 50px;
+ 
+}
+
+}

@@ -22,19 +22,19 @@
         <tr>
           <td>23-08-2020</td>
           <td>FBC</td>
-          <td><a href="#">Blood Report</a></td>
+          <td><a href="<?php echo BASEURL.'/report'?>" target="_blank">Blood Report</a></td>
           <td>normal</td>
         </tr>
         <tr>
           <td>23-08-2020</td>
           <td>Urine test</td>
-          <td><a href="#">Urine Report</a></td>
+          <td><a href="<?php echo BASEURL.'/report'?>" target="_blank">Urine Report</a></td>
           <td>normal</td>
         </tr>
         <tr>
           <td>23-08-2020</td>
           <td>FBC</td>
-          <td><a href="#">Blood Report</a></td>
+          <td><a href="<?php echo BASEURL.'/report'?>" target="_blank">Blood Report</a></td>
           <td>High glucose</td>
         </tr>
         </tbody>
