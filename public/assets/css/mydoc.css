@@ -1,0 +1,128 @@
+  .box{
+    position: relative;
+    top: 10%;
+    left: 15%;
+  
+    height: 20%;
+    width: 60%;
+    
+    border-radius: 10px;  
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);
+    background-color: rgba(69, 147, 226, 0.068);
+  }
+
+  .box > div{
+    height: 50%;
+    border-bottom:1px solid  rgba(0, 0, 0, 0.25);
+    
+  }
+
+  .box > div> p{
+    padding-left: 10px;
+  }
+  
+  .box > div > p> span{
+    position: absolute;
+    left: 40%;
+    font-weight: 600;
+  }  
+
+  .button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin-right: 20px;
+    padding-top: 0;
+    font-size: 20px;
+    height: 20px;
+    
+  }
+
+  .button:hover{
+    color: cadetblue;
+  }
+
+  .chat-popup {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+
+    height: 80%;
+    border: 3px solid #f1f1f1;
+    border-radius: 10px;
+    z-index: 9;
+  }
+
+  .form-container {
+    width: 250px;
+    padding: 10px;
+    background-color: white;
+  }
+
+  .form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+  }
+
+  .form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  .form-container .btn {
+    background-color: #0F4CA8;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+
+  .form-container .cancel {
+    background-color: #8b93a0;
+  }
+
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+
+  @media screen and (max-width: 1000px){
+    .box{
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 850px){
+  
+    .box{
+      width: 80%;
+      left: 10%;
+    }
+    
+  }
+  
+  @media screen and (max-width: 450px){
+  
+    .box{
+      font-size: 12px;
+      width: 70%;
+    }
+    .button{   
+      margin-right: 5px;     
+    }
+
+    .button > i{   
+      font-size: 16px;     
+    }
+
+  }

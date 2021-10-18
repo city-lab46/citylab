@@ -1,0 +1,82 @@
+.main{
+  border-top: none;
+}
+
+.nav img{
+  position: absolute;
+  top: 0;
+  left: 55%;
+
+  width: auto;
+  height: 100%;
+  display: block;
+  padding: 5px;
+  border-radius: 100px; 
+}
+
+.box{
+  position: relative;
+  top: 10%;
+  left: 15%;
+
+  height: 60%;
+  width: 60%;
+  
+  border-radius: 10px;  
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.box > div{
+  height: 20%;
+  border-bottom:1px solid  rgba(0, 0, 0, 0.25);
+}
+
+.box > div:hover{
+  background-color: lavender;
+}
+
+.box > div> p{
+  padding-left: 10px;
+}
+
+.box > div > p > i{
+  float: right;
+  padding-right: 10px;
+}
+
+.box > div > p> span{
+  position: absolute;
+  left: 50%;
+}
+
+@media screen and (max-width: 1000px){
+  .box{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 850px){
+  .nav img{
+    left: 50%;
+  }
+  .box{
+    left: 20%;
+  }
+  .box > div > p> span{
+    left: 40%;
+  }
+}
+
+
+@media screen and (max-width: 450px){
+
+  .user_image >img {
+    display: none;
+  }
+
+  .box{
+    height: 50%;
+    font-size: 12px;
+  }
+  
+}

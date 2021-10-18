@@ -1,0 +1,85 @@
+.main{
+  overflow-y: auto;
+}
+
+.box{
+    position: relative;
+    top: 5%;
+    left: 10%;
+  
+    height: 30%;
+    width: 80%;
+    margin-top: 20px;
+    
+    border-radius: 10px;  
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    background-color: rgba(69, 147, 226, 0.068);
+  }
+
+  .box > div{
+    height: 20%;
+    padding-left: 10px;
+    padding-top: 5px;
+    border-left:#818181;
+    font-weight: 550;
+    color: dodgerblue;
+  }
+  .box > div > span{
+    font-weight: 500;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left:2px solid #818181;
+    color: #818181;
+  }  
+
+  .box > p{
+    padding-left: 10px;
+  }
+
+  .btn{
+    position: absolute;
+    bottom: 10px;
+    right: 25px;
+    background-color: rgb(69, 148, 226);
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 550;
+    border: none;
+    padding: 8px 20px;
+    box-shadow: 0 3px #999;
+  }
+
+  .btn:hover{
+    background-color: rgb(61, 128, 196);
+  }
+  .btn:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+  
+  @media screen and (max-width: 1000px){
+    .box{
+      font-size: 14px;
+      
+    }
+  }
+  
+  @media screen and (max-width: 850px){
+  
+    
+  }
+  
+  @media screen and (max-width: 450px){
+  
+    .box{
+      font-size: 12px;
+    }
+    
+    .btn{
+      font-size: 12px;
+      padding: 5px 10px;
+
+    }
+  }
