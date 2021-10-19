@@ -25,7 +25,6 @@ class book extends Controller{
 			$bookingId = $this->model->bookInsert($patientId,$date);
 			$test = $this->model->testInsert($testID,$bookingId);
             $this->redirect("pay");
-		
 		}
 		else{
 			echo "<script>alert('Already Placed Booking.')</script>";
