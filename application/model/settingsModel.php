@@ -8,7 +8,9 @@ class settingsModel extends Model{
     }
     
     function getData($patientId){
-        return $this->db->runQuery("SELECT * from user WHERE user_id ='$patientId'");
+        $query = "SELECT * from user WHERE user_id ='$patientId'";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetch();
     }    
-    
 }
