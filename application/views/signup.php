@@ -1,76 +1,68 @@
-<?php session_start();  ?>
-
+<?php $errors=$data['errors'] ?> 
 <html lang="en">
 <head>
-    <title>City-Lab</title>
+    <title>CityLab</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="assets/img/favicon.png"/>
+    <link rel="icon" href="<?php echo BASEURL.'/public/assets/img/favicon.png'?>"/>
     <!-- Local Styles -->
-    <link rel="stylesheet" href="assets/css/signup.css"/>
+    <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/signup.css'?>"/>
 
 </head>
 
 <body>
 <div class="signupFrm">
-    <form  action="../controller/signup.php" class="form" method="POST">
+    <form  action="<?php echo BASEURL.'/signup/submit'?>" class="form" method="POST">
       <h3>Sign up</h3>
       
-      <?php if (isset($_SESSION['signup-errors'])): ?>
-
-            <div> 
-                <?php foreach ($_SESSION['signup-errors'] as $error) {
-                    echo "<strong> $error </strong><br/>";
-                } ?>
-            </div>
-            <?php unset($_SESSION['signup-errors']);?>
-      
-      <?php endif;?> 
-
       <div class="inputContainer">
         <input type="text" name="firstname" id="firstname" class="input" placeholder="firstname">
         <label for="firstname" class="label">First Name</label>
+        <span class="error"><?php echo $errors["firstname"];?></span>
       </div>
       <div class="inputContainer">
         <input type="text" name="lastname" id="lastname" class="input" placeholder="lastname">
         <label for="lastname" class="label">Last Name</label>
+        <span class="error"><?php echo $errors["lastname"];?></span>
       </div>
       <div class="inputContainer">
         <input type="email" name="email" id="email" class="input" placeholder="email">
         <label for="email" class="label">Email</label>
+        <span class="error"><?php echo $errors["email"];?></span>
       </div>
       <div class="inputContainer">
         <input type="text" name="username" id="username" class="input" placeholder="username">
         <label for="username" class="label">Username</label>
+        <span class="error"><?php echo $errors["username"];?></span>
       </div>
       <div class="inputContainer">
         <input type="password" name="password" id="password" class="input" placeholder="password">
         <label for="password" class="label">Password</label>
+
       </div>
       <div class="inputContainer">
         <input type="password" name="confirmPassword" id="confirmPassword" class="input" placeholder="Repeat Password">
         <label for="confirmPassword" class="label">Confirm Password</label>
+        <span class="error"><?php echo $errors["password"];?></span>
       </div>
       <div class="inputContainer">
         <input type="date" name="dob" id="dob" class="input" placeholder="">
         <label for="dob" class="label">Date of Birth</label>
+        <span class="error"><?php echo $errors["dob"];?></span>
       </div>
 
-      <!-- <div class="form-group">
-                    <label class="form-label mt-4">Gender</label>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input type="radio" class="form-check-input" name="gender" value="m" checked>Male
-                        </label>
-                        <label class="form-check-label mx-5">
-                            <input type="radio" class="form-check-input" name="gender" value="f">Female
-                        </label>
-                    </div>
-          </div> -->
+      <div class="inputContainer">
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male" >male</label>
+        <input type="radio" name="gender" id="female"  value="female">
+        <label for="female" >female</label>
+        <span class="error"><?php echo $errors["gender"];?></span>
+      </div>
 
       <div class="inputContainer">
         <input type="text" name="contact" id="contact" class="input" placeholder="Enter Phone">
         <label for="contact" class="label">Contact</label>
+        <span class="error"><?php echo $errors["contact"];?></span>
       </div>
       
 

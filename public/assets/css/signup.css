@@ -102,3 +102,9 @@ body {
     font-size: 14px;
     font-weight: 600;
   }
+
+  .error{
+    color: red;
+    float: right;
+    padding: 5px;
+  }

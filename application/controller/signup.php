@@ -1,82 +1,87 @@
 <?php
-session_start();
 
-require_once '../config.php';
+class signup extends Controller{
 
-if (isset($_POST['submit'])) {
-
-    //Collect data
-
-    $firstname = $_POST['fisrtname'];
-    $lastname = $_POST['lastname'];
-    $email = $_POST['email'];
-    $dob = $_POST['dob'];
-    $gender = $_POST['gender'];
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirmPassword'];
-    $contact = $_POST['contact'];
-    $title = "Patient";
-
-    //Verify data
-    $errors = [];
-
-    if (!verify($email, "/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/")) array_push($errors, "Input valid email address");
-    if (!verify($password, "/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/")) array_push($errors, "Password must be strong");
-    if (!verify($contact, "/^[0-9]+$/")) array_push($errors, "Must only have numbers");
-    if ($password != $confirmPassword) array_push($errors, "Passwords does not match");
-
-    if (!empty($errors)) {
-        $_SESSION['signup-errors'] = $errors;
-        header("Location: ../views/signup.php");
-        die();
+    public function __construct(){
+        parent::__construct();
     }
 
-    //Sanitize data
-    $firstname = $conn->real_escape_string($firstname);
-    $lastname = $conn->real_escape_string($lastname);
-    $email = $conn->real_escape_string($email);
-    $dob = $conn->real_escape_string($dob);
-    $contact = $conn->real_escape_string($contact);
-    $gender = $conn->real_escape_string($gender);
-    $username = $conn->real_escape_string($username);
-    //Password hasing
-    $password = md5($conn->real_escape_string($password));
-
-    //Insert into Database
-    $sql = "INSERT INTO user ( firstname, lastname,  email, dob, contact, gender, password, username ,title ) 
-        VALUES(
-            '$firstname',
-            '$lastname',
-            '$email',
-            '$dob',
-            '$contact',
-            '$gender',
-            '$password',
-            '$username',
-            '$title'
-        )";
-
-    /*$sql2 = "INSERT INTO patient ( patient_id, user_id)
-        VALUES(
-            'P'+'$user_id',
-            '$user_id'  //how to get this??
-        )";*/
-
-    if ($conn->query($sql)) {
-        $_SESSION['signup-message'] = "User created Succesfully";
-        header("Location: ../views/login.php");
-        die();
-    } else {
-        $_SESSION['signup-errors'][0] = "Database error. Try again later.";
-        header("Location: ../views/signup.php");
-        die();
+    public function index(){
+        //Initially no errors
+        $data['errors'] = $this->initiate();
+        $this->view->render("signup", $data);
     }
-} else {
-    echo "Invalid request";
+
+    public function initiate(){
+        $errors = [];
+        $errors["username"]="";
+        $errors["firstname"]="";
+        $errors["lastname"]="";
+        $errors["dob"]="";
+        $errors["password"]="";
+        $errors["email"]="";
+        $errors["gender"]="";
+        $errors["contact"]="";
+        return $errors;
+    }
+    
+
+    public function submit(){
+        $data['errors']=$errors=$this->initiate();
+        
+        if (isset($_POST['submit'])) {
+            
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $email = $_POST['email'];
+            $dob = $_POST['dob'];
+            $gender = $_POST['gender'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $confirmPassword = $_POST['confirmPassword'];
+            $contact = $_POST['contact'];
+            $title = "Patient";
+        
+            //Verify data
+
+            //if (!$this->model->verify($email,"/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/")) { $errors["email"]="Input valid email address"; }
+            //if (!$this->model->verify($password,"/^\S*(?=\S{8,})(?=\S*[a-z])(?=\S*[A-Z])(?=\S*[\d])\S*$/")) { $errors["password"]="Password must be strong"; }
+            //if (!$this->model->verify($contact,"/^[0-9]+$/")) { $errors["contact"]="Must only contain numbers"; }
+
+            if (empty($username)) { $errors["username"]="Username is required"; }
+            if (empty($email)) { $errors["email"]="Email is required"; }
+            if (empty($firstname)) { $errors["firstname"]="First Name is required"; }
+            if (empty($lastname)) { $errors["lastname"]="Last Name is required"; }
+            if (empty($dob)) { $errors["dob"]= "Date of birth is required"; }
+            if (empty($password)) { $errors["password"]= "Password is required"; }
+            if (empty($gender)) { $errors["gender"]= "Gender is required"; }
+            if (empty($contact)) { $errors["contact"]= "Contact Number is required"; }
+            if ($password != $confirmPassword) {$errors["password"]= "Passwords are not matched";}
+            if ($this->model->usernameCheck($username)) {$errors["username"]= "Username already exists";}
+            if ($this->model->emailCheck($email)) {$errors["email"]= "Email already exists";}
+            
+        } 
+        $numberOfErrors=0;
+        foreach ($errors as $key => $value){
+            if($value!=""){
+                $numberOfErrors++;
+            }
+        }
+        
+        if ($numberOfErrors== 0) {
+            $userId = $this->model->addPatient($firstname,$lastname,$email,$dob,$gender,$username,$password,$contact,$title);
+            $register = $this->model->addPatientId($userId);
+           
+        }
+        
+        $data['errors']=$errors;
+        if (!empty($data)){
+            $this->redirect("login");
+             
+        } else{
+            $this->view->render("signup", $data); 
+        }
+    }
+
 }
 
-function verify($data, $pattern)
-{
-    if (preg_match($pattern, $data)) return  true;
-    return false;
-}
