@@ -29,13 +29,14 @@
           </div>
           <div class="field">
             <p>Date<span class="data">
-              <input type="date" name="date" id="myDate" value="dd-mm-yyyy">
+              <input type="date" name="date" id="myDate" value="DD-MM-YYYY">
             </span></p>
           </div>
           <div class="field">
             <p>Test<span class="data">
               <select name="testID">
-                <option value="1">Fasting Blood Suger</option>
+                <option value="">--SELECT TEST--</option>
+                <option value="1">Fasting Blood Sugar</option>
                 <option value="2">Complete Blood Count</option>
                 <option value="3">Urinalysis</option>
               </select>
@@ -66,7 +67,7 @@
                 <div class="field">Date &nbsp:&nbsp <?php echo $value['created_date'];?></div>
                 <div class="field">Test &nbsp:&nbsp <?php echo $value['name'];?></div>
                 <div class="btn">
-                  <form action="" method="post">
+                  <form action="<?php echo BASEURL.'/book/cancel'?>" method="post">
                     <input type="hidden" name="bookingID" value="<?php echo $value['booking_id'];?>">     
                     <button type="submit" name="cancel" class="button2">Cancel</button>                                                     
                   </form>

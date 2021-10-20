@@ -12,6 +12,8 @@ class pay extends Controller{
         $data['result'] = $result;
 
         $this->view->render("pay", $data);
+        
     }
+
 
 }

@@ -33,6 +33,10 @@
     document.getElementById("myForm").style.display = "none";
   }
 
+  function notification() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
 </script>
 </head>
 <body>
@@ -55,7 +59,14 @@
 
     <!-- USER INFORMATION DETAILS -->
     <div class="info">
-      <button class="notifi"><i class="far fa-bell"></i></button>
+
+      <div class="dropdown">
+        <button onclick="notification()" class="notifi"><i class="far fa-bell"><span class="badge">3</span></i></button>
+          <div id="myDropdown" class="dropdown-content">
+            
+          </div>
+      </div>
+
       <div class="user_image">
         <a href="<?php echo BASEURL.'/settings'?>">
           <img src="<?php echo BASEURL.'/public/assets/img/tuat.png'?>" alt="">

@@ -32,6 +32,14 @@ class book extends Controller{
 		}
 	}
 
+	public function cancel(){
+		$bookingId = $_POST['bookingID'];
+		
+		$result = $this->model->bookCancel($bookingId);
+		echo "<script>alert('Cancel Booking')</script>";
+		echo "<script>window.location.href='index'</script>";
+	}
+
 }
 
 

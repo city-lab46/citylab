@@ -16,7 +16,7 @@ class bookModel extends Model{
         $query = "SELECT * FROM booking WHERE patient_id = '$patientId '";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
-        return $count=$stmt->rowCount();
+        return $count = $stmt->rowCount();
     }
 
     function bookInsert($patientId, $date){
@@ -33,20 +33,10 @@ class bookModel extends Model{
         //bind
     }
 
-  /*
-
     function bookCancel($id){
-        //global $conn;
-        $sql = "DELETE FROM booking WHERE booking_id = '$id'";
-        $result = $conn->query($sql);
-
-        if ($result){
-            echo "<script>alert('Booking Canceled.')</script>";
-            echo "<script>window.location.href='book.php'</script>";
-        }else{
-            echo "<script>alert('Booking Cancel Failed.')</script>";
-            echo "<script>window.location.href='book.php'</script>";
-        }
-    }*/
+        $query = "DELETE FROM booking WHERE booking_id = '$id'";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+    }
 }
         

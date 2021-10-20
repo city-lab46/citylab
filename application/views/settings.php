@@ -14,7 +14,7 @@
             <p>Name<span><?php echo $this->result['first_name']. "&nbsp" .$this->result['last_name'];?></span><i class="far fa-edit"></i></p>
           </div>
           <div>
-            <p>Birthday<span>september 5 1998</span><i class="far fa-edit"></i></p>
+            <p>Birthday<span>1998 September 5</span><i class="far fa-edit"></i></p>
           </div>
           <div>
             <p>Gender<span>Male</span><i class="far fa-edit"></i></p>
