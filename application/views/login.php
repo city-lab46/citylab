@@ -4,9 +4,9 @@
 <title>City-Lab</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="assets/img/favicon.png"/>
+    <link rel="icon" href="<?php echo BASEURL.'/public/assets/img/favicon.png'?>"/>
     <!-- Local Styles -->
-    <link rel="stylesheet" href="assets/css/login.css"/>
+    <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/login.css'?>"/>
     
 </head>
 

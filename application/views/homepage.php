@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>City-Lab</title>
+<title>CityLab</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="public/assets/img/favicon.png"/>
+<link rel="icon" href="<?php echo BASEURL.'/public/assets/img/favicon.png'?>"/>
 <!-- Local Styles -->
-<link rel="stylesheet" href="public/assets/css/homepage.css"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/homepage.css'?>"/>
 
-<script src="public/assets/js/homepage.js"></script>
+<script src="<?php echo BASEURL.'/public/assets/js/homepage.js'?>"></script>
 </head>
 
 <body>
 
 <!-- Navbar -->
 <div class="header">
-  <img class="logo" src="public/assets/img/logo.png" alt="">
+  <img class="logo" src="<?php echo BASEURL.'/public/assets/img/logo.png'?>" alt="">
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="#home">Home</a>
@@ -41,7 +41,7 @@
 
 <!-- Welcome -->
 <div id="home" class="welcome">
-  <img class="img1" src="public/assets/img/dd.jpeg" alt="">
+  <img class="img1" src="<?php echo BASEURL.'/public/assets/img/dd.jpeg'?>" alt="">
   <div class="line"></div>
   <div class="wctxt">
     <p>WELCOME !!
