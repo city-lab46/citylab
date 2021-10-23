@@ -71,16 +71,12 @@ class signup extends Controller{
         if ($numberOfErrors== 0) {
             $userId = $this->model->addPatient($firstname,$lastname,$email,$dob,$gender,$username,$password,$contact,$title);
             $register = $this->model->addPatientId($userId);
-           
+            $this->redirect("login"); 
         }
         
         $data['errors']=$errors;
-        if (!empty($data)){
-            $this->redirect("login");
-             
-        } else{
-            $this->view->render("signup", $data); 
-        }
+        $this->view->render("signup", $data);
+        
     }
 
 }

@@ -21,17 +21,7 @@ class signupModel extends Model{
         $contact = $this->db->quote($contact);
     */
         $query = "INSERT INTO user ( first_name, last_name,  email, dob, contact, gender, password, username ,title ) 
-                VALUES(
-                    '$firstname',
-                    '$lastname',
-                    '$email',
-                    '$dob',
-                    '$contact',
-                    '$gender',
-                    '$password',
-                    '$username',
-                    '$title'
-                )";
+                VALUES('$firstname', '$lastname', '$email', '$dob', '$contact', '$gender', '$password', '$username', '$title')";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $this->db->lastInsertId();

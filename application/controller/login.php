@@ -8,84 +8,92 @@ class login extends Controller {
         
     }
 
-    public function index(){  
-        $this->view->render("login");
+    public function index(){ 
+        $errors = [];
+        $errors["username"]="";
+        $errors["password"]=""; 
+        $data['errors']=$errors;
+        $this->view->render("login",$data);
     }
 
     public function submit(){
 
         $errors = [];
-        
+        $errors["username"]="";
+        $errors["password"]=""; 
+
         if (isset($_POST['login'])) {
         
             $username = $_POST['username'];
             $password = $_POST['password'];
 
+            if (empty($username)) { $errors["username"]= "Username required"; }
+            if (empty($password)) { $errors["password"]= "Password required"; }
         
-            /*if (!verify($email, "/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/")) array_push($errors, "Input valid email address");
-        
-            if (!empty($errors)) {
-                $_SESSION['login-errors'] = $errors;
-                $this->view->render("login"); // right?
-                die();
-            }*/
-
-            //Sanitize data
-            //$username = $conn->real_escape_string($username);
-            //Password hasing
-            //$password = md5($conn->real_escape_string($password));
-        
-            $result = $this->model->checkAccount($username,$password);
-            
-            if ($result) {
-                var_dump($result);
-                //$resultSet = $result->fetch_assoc();
-                //var_dump($resultSet);
-                $_SESSION['login-message'] = "Login Succesful";
-                $_SESSION['login'] = true;
-                $_SESSION['user_id'] = $result['user_id'];
-                $_SESSION['first_name'] = $result['first_name'];
-                $_SESSION['last_name'] = $result['last_name'];
-                $_SESSION['username'] = $result['username'];
-                $_SESSION['contact'] = $result['contact'];
-                $_SESSION['email'] = $result['email'];
-                $_SESSION['title'] = $result['title'];
-                $_SESSION['dob'] = $result['dob'];
-                $_SESSION['gender'] = $result['gender'];
-        
-                if($_SESSION['title'] == "Patient" ){
-                    $this->redirect('patientHome');
-
+            $numberOfErrors=0;
+            foreach ($errors as $key => $value){
+                if($value!=""){
+                    $numberOfErrors++;
                 }
-                else if($_SESSION['title'] == "Doctor" ){
-                    header("Location: ../Patient/test.html");
-                    die();
-                }
-                else if($_SESSION['title'] == "CLS" ){
-                    header("Location: cls-home-page.php");
-                    die();
-                }
-                else if($_SESSION['title'] == "Receptionist" ){
-                    header("Location: receptionist-home-page.php");
-                    die();
-                }
-                else if($_SESSION['title'] == "Admin" ){
-                    header("Location: admin-home-page.php");
-                    die();
-                }
-            
-            } else {
-                $_SESSION['login-errors'][0] = "Invalid Username or Password";
-                $this->redirect('login');              
             }
-        } else {
-            echo "Invalid request";
+
+            if ($numberOfErrors == 0){
+                $user = $this->model->checkAccount($username,$password);
+                
+                if ($user) {
+                    //var_dump($user); // true
+                    //$resultSet = $user->fetch_assoc();
+                    //var_dump($resultSet);
+                    $_SESSION['login-message'] = "Login Succesful";
+                    $_SESSION['login'] = true;
+                    $_SESSION['user_id'] = $user['user_id'];
+                    $_SESSION['first_name'] = $user['first_name'];
+                    $_SESSION['last_name'] = $user['last_name'];
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['contact'] = $user['contact'];
+                    $_SESSION['email'] = $user['email'];
+                    $_SESSION['title'] = $user['title'];
+                    $_SESSION['dob'] = $user['dob'];
+                    $_SESSION['gender'] = $user['gender'];
+            
+                    if($_SESSION['title'] == "Patient" ){
+                        $this->redirect('patientHome');
+    
+                    }
+                    else if($_SESSION['title'] == "Doctor" ){
+                        header("Location: ../Patient/test.html");
+                        die();
+                    }
+                    else if($_SESSION['title'] == "CLS" ){
+                        header("Location: cls-home-page.php");
+                        die();
+                    }
+                    else if($_SESSION['title'] == "Receptionist" ){
+                        header("Location: receptionist-home-page.php");
+                        die();
+                    }
+                    else if($_SESSION['title'] == "Admin" ){
+                        header("Location: admin-home-page.php");
+                        die();
+                    }
+                
+                } else {
+                    $errors["password"] = "Invalid Username or Password";              
+                }
+            }  
         }
-        
+        $data['errors']=$errors;
+        $this->view->render("login",$data);
     }
 
-    function verify($data, $pattern){
+    public function logout(){
+        session_start();
+        session_destroy();
+        header('location:'.BASEURL);
+    }
+
+    /*function verify($data, $pattern){
         if (preg_match($pattern, $data)) return  true;
         return false;
-    }
+    }*/
 }

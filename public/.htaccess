@@ -1,6 +1,6 @@
 Options -Multiviews
 RewriteEngine on
-RewriteBase /xcitylabx/public
+RewriteBase /citylab/public
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
