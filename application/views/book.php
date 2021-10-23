@@ -1,6 +1,14 @@
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/book.css'?>"/>
+<script src="<?php echo BASEURL.'/public/assets/js/book.js'?>"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <?php include "components/header.php"; ?>
 <?php include "components/sidenav.php"; ?>
+
+<script>
+  $(document).ready(function () {
+    $("#test").CreateMultiCheckBox({ width: '230px', defaultText : 'Select Below', height:'250px' });
+  });
+</script>
     
     <div class="nav">
       <a class="activ" href="<?php echo BASEURL.'/book'?>">Book Test</a>
@@ -34,8 +42,7 @@
           </div>
           <div class="field">
             <p>Test<span class="data">
-              <select name="testID">
-                <option value="">--SELECT TEST--</option>
+              <select id="test" name="testID">
                 <option value="1">Fasting Blood Sugar</option>
                 <option value="2">Complete Blood Count</option>
                 <option value="3">Urinalysis</option>
