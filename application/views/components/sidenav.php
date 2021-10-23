@@ -11,7 +11,7 @@
             <a class="link" href="<?php echo BASEURL.'/doctor'?>"><i class="fas fa-stethoscope"></i><span>Doctor</span></a>
             <a class="link" href="<?php echo BASEURL.'/settings'?>"><i class="fas fa-cog"></i><span>Settings</span></a>
         </div>
-        <div class="bttn"><button onclick="window.location.href='<?php echo BASEURL?>'">Logout</button></div>
+        <div class="bttn"><button onclick="window.location.href='<?php echo BASEURL.'/login/logout'?>'">Logout</button></div>
 </div>
 
 <script>
