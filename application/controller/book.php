@@ -12,7 +12,7 @@ class book extends Controller{
 		$data = [];
 		$result = $this->model->getBookDetails($patientId);
 		$data['result'] = $result;
-		$this->view->render("book",$data);
+		$this->view->render("patient/book",$data);
 	}
 
 	public function insert(){

@@ -28,9 +28,9 @@ class App{
     }
 
     private function _loadDefaultController(){
-        require '../application/controller/Home.php';
+        require '../application/controller/Homepage.php';
 
-        $this->_controller = new Home();
+        $this->_controller = new Homepage();
         $this->_controller->index();
     }
 

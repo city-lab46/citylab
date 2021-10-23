@@ -9,11 +9,11 @@ class doctor extends Controller{
         $result = $this->model->getData();
         $data['result'] = $result;
 
-        $this->view->render("doctor", $data);
+        $this->view->render("patient/doctor", $data);
     }
 
     public function mydoctor(){   
-        $this->view->render("mydoctor");
+        $this->view->render("patient/mydoctor");
     }
 
 }

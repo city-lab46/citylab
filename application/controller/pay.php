@@ -11,7 +11,7 @@ class pay extends Controller{
         $result = $this->model->getData($patientId);
         $data['result'] = $result;
 
-        $this->view->render("pay", $data);
+        $this->view->render("patient/pay", $data);
         
     }
 

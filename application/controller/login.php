@@ -57,24 +57,19 @@ class login extends Controller {
                     $_SESSION['gender'] = $user['gender'];
             
                     if($_SESSION['title'] == "Patient" ){
-                        $this->redirect('patientHome');
-    
+                        $this->redirect('home');
                     }
                     else if($_SESSION['title'] == "Doctor" ){
-                        header("Location: ../Patient/test.html");
-                        die();
+                        $this->redirect('home');
                     }
                     else if($_SESSION['title'] == "CLS" ){
-                        header("Location: cls-home-page.php");
-                        die();
+                        $this->redirect('home');
                     }
                     else if($_SESSION['title'] == "Receptionist" ){
-                        header("Location: receptionist-home-page.php");
-                        die();
+                        $this->redirect('home');
                     }
                     else if($_SESSION['title'] == "Admin" ){
-                        header("Location: admin-home-page.php");
-                        die();
+                        $this->redirect('home');
                     }
                 
                 } else {
@@ -83,7 +78,7 @@ class login extends Controller {
             }  
         }
         $data['errors']=$errors;
-        $this->view->render("login",$data);
+        $this->view->render("patient/login",$data);
     }
 
     public function logout(){

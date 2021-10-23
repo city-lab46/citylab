@@ -6,7 +6,7 @@ class test extends Controller{
     }
     
     public function index(){       
-        $this->view->render("test");
+        $this->view->render("patient/test");
     }
     
 }

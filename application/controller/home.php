@@ -1,13 +1,19 @@
 <?php
-
-class home extends Controller {
-
-    function __construct(){
+class home extends Controller{
+    public function __construct(){
         parent::__construct();
-        //call model if need
+    }
+    public function index(){       
+        $this->view->render("patient/home");
     }
 
-    function index(){
-        $this->view->render("homepage");
+    public function articles(){       
+        $this->view->render("patient/home");
     }
+
+    public function testTypes(){       
+        $this->view->render("patient/testTypes");
+    }
+    
+
 }

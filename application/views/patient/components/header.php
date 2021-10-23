@@ -208,7 +208,7 @@
     
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="<?php echo BASEURL.'/patientHome'?>"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="<?php echo BASEURL.'/home'?>"><i class="fas fa-home"></i><span>Home</span></a>
       <a href="<?php echo BASEURL.'/test'?>"><i class="fas fa-vials"></i><span>Tests</span></a>
       <a href="<?php echo BASEURL.'/book'?>"><i class="fas fa-bookmark"></i><span> Book</span></a>
       <a href="<?php echo BASEURL.'/doctor'?>"><i class="fas fa-stethoscope"></i><span>Doctor</span></a>

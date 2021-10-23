@@ -8,7 +8,7 @@ class settings extends Controller{
     public function index(){             
         $patientId = $_SESSION['user_id'];    
         $this->view->result = $this->model->getData($patientId);        
-        $this->view->render("settings");
+        $this->view->render("patient/settings");
     }
 
 }

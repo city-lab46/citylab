@@ -5,7 +5,7 @@
         <img src="<?php echo BASEURL.'/public/assets/img/logo.jpg'?>" alt=""></img>
     </header>
         <div id="nav">
-            <a class="link" href="<?php echo BASEURL.'/patientHome'?>"><i class="fas fa-home"></i><span>Home</span></a>
+            <a class="link" href="<?php echo BASEURL.'/home'?>"><i class="fas fa-home"></i><span>Home</span></a>
             <a class="link" href="<?php echo BASEURL.'/test'?>"><i class="fas fa-vials"></i><span>Tests</span></a>
             <a class="link" href="<?php echo BASEURL.'/book'?>"><i class="fas fa-bookmark"></i><span> Book</span></a>
             <a class="link" href="<?php echo BASEURL.'/doctor'?>"><i class="fas fa-stethoscope"></i><span>Doctor</span></a>
