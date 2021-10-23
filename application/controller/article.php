@@ -1,4 +1,5 @@
 <?php
+
 class article extends Controller{
 
     public function __construct(){
@@ -8,5 +9,10 @@ class article extends Controller{
     public function index(){       
         $this->view->render("patient/article");
     }
+
+    /*
+    public function publication(){       
+        $result = $this->model->getArticle();
+    }*/
     
 }

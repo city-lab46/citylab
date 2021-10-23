@@ -208,11 +208,11 @@
     
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="<?php echo BASEURL.'/home'?>"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="<?php echo BASEURL.'/test'?>"><i class="fas fa-vials"></i><span>Tests</span></a>
+      <a href="<?php echo BASEURL.'/home/patient'?>"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="<?php echo BASEURL.'/test/records'?>"><i class="fas fa-vials"></i><span>Tests</span></a>
       <a href="<?php echo BASEURL.'/book'?>"><i class="fas fa-bookmark"></i><span> Book</span></a>
       <a href="<?php echo BASEURL.'/doctor'?>"><i class="fas fa-stethoscope"></i><span>Doctor</span></a>
-      <a href="<?php echo BASEURL.'/settings'?>"><i class="fas fa-cog"></i><span>Settings</span></a>
+      <a href="<?php echo BASEURL.'/settings/patient'?>"><i class="fas fa-cog"></i><span>Settings</span></a>
       <a href="<?php echo BASEURL ?>"><i class="fas fa-sign-out-alt"></i><span>Sign Out</span></a>
 
     </div>
@@ -231,7 +231,7 @@
       </div>
 
       <div class="user_image">
-        <a href="<?php echo BASEURL.'/settings'?>">
+        <a href="<?php echo BASEURL.'/settings/patient'?>">
           <img src="<?php echo BASEURL.'/public/assets/img/tuat.png'?>" alt="">
         </a>
       </div>

@@ -1,4 +1,5 @@
 <?php
+
 class testDetails extends Controller{
 
     public function __construct(){
@@ -8,5 +9,10 @@ class testDetails extends Controller{
     public function index(){       
         $this->view->render("patient/testDetails");
     }
+
+    /*
+    public function test-details(){       
+        $result = $this->model->getDetails();
+    }*/
     
 }

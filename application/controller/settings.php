@@ -6,6 +6,10 @@ class settings extends Controller{
         parent::__construct();
     }
     public function index(){             
+        
+    }
+    
+    public function patient(){             
         $patientId = $_SESSION['user_id'];    
         $this->view->result = $this->model->getData($patientId);        
         $this->view->render("patient/settings");

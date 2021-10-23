@@ -4,6 +4,9 @@ class home extends Controller{
         parent::__construct();
     }
     public function index(){       
+    }
+
+    public function patient(){       
         $this->view->render("patient/home");
     }
 
