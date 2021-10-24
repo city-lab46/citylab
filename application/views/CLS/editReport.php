@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/createTest.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/editTest.css'?>"/>
 <?php include "components/header.php"; ?>
 
 
@@ -20,7 +20,7 @@
     
       $unit = $data['unit'];
       $speci_examined = $data['speci_examined'];
-      $test = $data['test'];
+      //$test = $data['test'];
   ?>   
     
   <div class="main">

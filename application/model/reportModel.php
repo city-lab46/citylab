@@ -35,14 +35,14 @@ class reportModel extends Model{
     }
 
     function getreportDetails(){
-        $query = "SELECT * FROM test_report ";
+        $query = "SELECT * FROM report ";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
     }
 
     function getOneReportDetails($report_id){
-        $query = "SELECT * FROM test_report WHERE report_id = '$report_id '";
+        $query = "SELECT * FROM report WHERE report_id = '$report_id'";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
