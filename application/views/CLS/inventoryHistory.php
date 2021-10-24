@@ -6,9 +6,8 @@
 
     
     <div class="nav">
-      <a  href="<?php echo BASEURL.'/addInventory'?>" ><i class="fas fa-plus-circle"></i>Add Inventory</a>
-      
-      <a href="<?php echo BASEURL.'/inventoryHistory'?>" class="activ">Inventory History</a> 
+      <a href="<?php echo BASEURL.'/inventory/insert'?>" ><i class="fas fa-plus-circle"></i>Add Inventory</a>  
+      <a href="<?php echo BASEURL.'/inventory/history'?>" class="activ">Inventory History</a> 
     </div> 
 
     <div class="main">

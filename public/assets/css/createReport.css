@@ -4,12 +4,12 @@
 
 
 
-.form{
+.main{
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
 }
 
-.form{
+.main{
     position: absolute;
     right: 0;
     padding-top:100px;

@@ -478,6 +478,10 @@ p #date{
     border-bottom:none;
     color:rgba(0, 0, 0, 0.65);
   } 
+
+  .nav a i{
+    padding-right: 2px;
+  }
   
   .info{
     width: 30%;

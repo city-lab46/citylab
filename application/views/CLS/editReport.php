@@ -3,9 +3,8 @@
 
 
     <div class="nav">
-      <a class="activ" href=" "><i class="fas fa-plus-circle"></i>Update Report</a>
-      
-      <a href="<?php echo BASEURL.'/viewHistory'?>">View History</a>
+      <a class="activ" href="<?php echo BASEURL.'/report/edit'?>"><i class="fas fa-plus-circle"></i>Update Report</a>
+      <a href="<?php echo BASEURL.'/report/history'?>">View History</a>
     </div>
 
 

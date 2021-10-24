@@ -1,17 +1,17 @@
-<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/viewHistory.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/reportHistory.css'?>"/>
 <?php include "components/header.php"; ?>
 
 
     <div class="nav">
-      <a  href="<?php echo BASEURL.'/createReport'?>"><i class="fas fa-plus-circle"></i>Create Report</a>
-      <a href="<?php echo BASEURL.'/viewHistory'?>" class="activ">View History</a> 
+      <a href="<?php echo BASEURL.'/report/create'?>"><i class="fas fa-plus-circle"></i>Create Report</a>
+      <a href="<?php echo BASEURL.'/report/history'?>" class="activ">View History</a> 
     </div>
 
     <div class="main">
       
       <div class="search">
         
-        <form action=" <?php echo BASEURL.'/viewHistory/search'?>" method="post">
+        <form action=" <?php echo BASEURL.'/report/search'?>" method="post">
           <input type="text" name="search" placeholder="search" >
           <button type="submit" name="search_btn" class="fabtn" id="searchbtn" >
             <i class="fa fa-search fa-lg" ></i>
@@ -53,14 +53,14 @@
           <tr>        
             <td data-label = "ID" ><?php echo $report_id; ?></td>
             <td data-label = "Created Date" ><?php echo $created_date; ?></td>
-            <td  data-label = "Result" ><?php echo $result; ?></td>
-            <td  data-label = "Unit" ><?php echo $unit; ?></td>
+            <td data-label = "Result" ><?php echo $result; ?></td>
+            <td data-label = "Unit" ><?php echo $unit; ?></td>
             <td data-label = "specimend examined" ><?php echo $speci_examined; ?></td>
-            <td  data-label = "Test" ><?php echo $test; ?></td>
+            <td data-label = "Test" ><?php echo $test; ?></td>
             <td data-label = "#">
              
-              <a href="<?php echo BASEURL.'/edit?report_id='.$data['report_id'].''?>" ><i class="fas fa-pen-square"></i></a>
-              <a href="<?php echo BASEURL.'/edit/delete?report_id='.$data['report_id'].''?>" ><i class="fas fa-trash-alt"></i></a>
+              <a href="<?php echo BASEURL.'report/edit?report_id='.$data['report_id'].''?>" ><i class="fas fa-pen-square"></i></a>
+              <a href="<?php echo BASEURL.'report/delete?report_id='.$data['report_id'].''?>" ><i class="fas fa-trash-alt"></i></a>
               
             </td>
           </tr>

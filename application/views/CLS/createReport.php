@@ -1,15 +1,15 @@
-<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/createTest.css'?>"/> 
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/createReport.css'?>"/> 
 <?php include "components/header.php"; ?>
 
     <div class="nav">
-      <a class="activ" href="<?php echo BASEURL.'/createReport'?>"><i class="fas fa-plus-circle"></i>Create Report</a>
-      <a href="<?php echo BASEURL.'/viewHistory'?>">View History</a> 
+      <a class="activ" href="<?php echo BASEURL.'/report/create'?>"><i class="fas fa-plus-circle"></i>Create Report</a>
+      <a href="<?php echo BASEURL.'/report/history'?>">View History</a> 
     </div>
   
 
     <div class="main">
       
-      <form action=" <?php echo BASEURL.'/createReport/insert'?>" method="post">     
+      <form action=" <?php echo BASEURL.'/report/create'?>" method="post">     
        
         <div class="row">
           <div class="col-25">

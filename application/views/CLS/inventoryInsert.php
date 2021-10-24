@@ -2,13 +2,13 @@
 <?php include "components/header.php"; ?>
     
     <div class="nav">
-      <a  href="<?php echo BASEURL.'/addInventory'?>" class="activ"><i class="fas fa-plus-circle"></i>Add Inventory</a>
-      <a href="<?php echo BASEURL.'/inventoryHistory'?>" >Inventory History</a> 
+      <a href="<?php echo BASEURL.'/inventory/insert'?>" class="activ"><i class="fas fa-plus-circle"></i>Add Inventory</a>
+      <a href="<?php echo BASEURL.'/inventory/history'?>" >Inventory History</a> 
     </div>
 
     <div class="main">
       
-      <form action="action_page.php">
+      <form action="">
         <div class="row">
           <div class="col-25">
             <label for="toolName">Inventory Tool Name</label>
