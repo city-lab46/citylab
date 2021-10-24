@@ -18,5 +18,8 @@ class home extends Controller{
         $this->view->render("patient/testTypes");
     }
     
+    public function CLS(){       
+        $this->view->render("CLS/articles");
+    }
 
 }

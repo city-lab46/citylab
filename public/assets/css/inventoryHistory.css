@@ -1,0 +1,170 @@
+.table-container{
+    padding: 0 10% 0 5% ;
+    
+    margin: 5px auto 0;
+    
+}
+.form{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    padding-left:60px;
+    padding-top:0;
+}
+.heading{
+    font-size:40px; 
+    text-align:center;
+    color: #0F4CA8;
+    margin-top: 3px;
+}
+
+.table{
+    border-collapse: collapse;
+    margin-top: 50px;
+    margin-left: 5% ;
+    width: 100%;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.table th{
+    text-align:center;
+}
+.table tbody tr:hover{
+    background-color: rgba(0, 0, 0, 0.15);
+}
+.table tbody tr td{
+    font-size:20px;
+    font-weight:normal;
+    letter-spacing: o.35px;
+    text-align:center;
+    padding:8px;
+   
+    border: 1px solid rgba(0, 0, 0, 0.29);
+
+}
+
+.table thead tr{
+    background-color: #0F4CA8;
+    color: #ffffff;
+    text-align: left;
+}
+.table th, .table tr{
+    padding: 12px 15px;
+
+}
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #0F4CA8;
+}
+
+.table tbody tr td .btn1{
+   color: rgb(22, 175, 116);
+   padding-right:10px;
+
+}
+
+.table tbody tr td .btn2{
+   color: red;
+}
+.search{
+    float: inherit;
+    width: 20%;
+    margin-top: 30px;
+  }
+  input[type=text]{
+      border-radius:10px;
+  }
+  .pages{
+      margin-top:15px;
+      margin-right:15px;
+      display:inline-flex;
+      float:right;
+      align-items:center;
+  }
+  .pages .btn1{
+   
+   background-color: #0F4CA8;
+    padding: 12px 12px 12px 12px;
+    color:#FFFFFF;
+    
+  }
+
+
+
+@media (max-width: 768px){
+    .table thead{
+        display:none;
+        
+    }
+    .table, .table tbody, .table tr, .table td{
+        display:block;
+        width:100%;
+    }
+    .table tr{
+        margin-bottom: 15px;
+    }
+    .table tbody tr td{
+        text-align:right;
+        padding-left: 50%;
+        position:relative;
+
+    }
+    .table td:before {
+        content:attr(data-label);
+        position:absolute;
+        left:0;
+        width:50%;
+        padding-left:15px;
+        font-weight:600px;
+        font-size:14px;
+        text-align:left;
+    }
+    .table tbody tr td .buttons{
+        background-color: #0F4CA8;
+    }
+}
+@media screen and (max-width: 600px) {
+    .table-container{
+        padding-left:1px;
+        
+    }
+    .search{
+       float:left;
+        width: 20%;
+        margin-top: 10px;
+        padding-left:1px;
+      }
+    
+   
+}
+@media screen and (max-width: 850px) {
+    .table-container{
+        padding-left:1px;
+        padding-top:30px;
+    }
+    .search{
+       
+        width: 20%;
+        margin-top: 10px;
+        padding-left:1px;
+      }
+   
+}
+@media screen and (max-width: 1000px) {
+    .table-container{
+        padding-left:1px;
+    }
+    .pages{
+        margin-top:5px;
+    }
+   
+}

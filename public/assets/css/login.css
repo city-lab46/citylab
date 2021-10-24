@@ -2,10 +2,13 @@ body {
     margin: 0;
     padding: 0;
     background-size: cover;
+    background-image: url("../img/bb.jpg");
     font-family: sans-serif;
   }
   
   .box {
+    background-color: #fff;
+    opacity: 0.8;
     position: absolute;
     top: 50%;
     left: 50%;
