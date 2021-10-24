@@ -19,7 +19,15 @@ class home extends Controller{
     }
     
     public function CLS(){       
-        $this->view->render("CLS/articles");
+        $this->view->render("CLS/home");
+    }
+
+    public function asd(){       
+        $this->view->render("CLS/home");
+    }
+
+    public function qwe(){       
+        $this->view->render("CLS/testTypes");
     }
 
 }

@@ -10,6 +10,9 @@ class testDetails extends Controller{
         $this->view->render("patient/testDetails");
     }
 
+    public function asd(){       
+        $this->view->render("CLS/testType");
+    }
     /*
     public function test-details(){       
         $result = $this->model->getDetails();

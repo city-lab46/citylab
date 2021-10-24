@@ -2,8 +2,8 @@
 <?php include "components/header.php"; ?>
     
     <div class="nav">
-      <a href="<?php echo BASEURL.'/articles'?>" class="activ">Articles</a>  
-      <a href="<?php echo BASEURL.'/testTypes'?>" >Test Types</a> 
+      <a href="<?php echo BASEURL.'/home/asd'?>" class="activ">Articles</a>
+      <a href="<?php echo BASEURL.'/home/qwe'?>">Test Types</a>  
     </div>
 
     <div class="main">
@@ -14,7 +14,7 @@
               Seven carbonyls (formaldehyde, acetaldehyde, acrolein, acetone, crotonaldehyde, methacrolein, propionaldehyde) were measured in the aerosol and the mainstream smoke. Corresponding biomarkers of exposure were determined in the user’s urine samples. 13C-labeled formaldehyde, acetaldehyde and acrolein were found in EC aerosol, while all seven labeled carbonyls were detected in smoke. 
             </p>
           </div>
-          <button class="btn" onclick="window.location.href='<?php echo BASEURL.'/articles'?>'">Back<i class="fas fa-angle-double-left"></i></button>
+          <button class="btn" onclick="history.back();">Back<i class="fas fa-angle-double-left"></i></button>
         </div> 
     </div>  
 
