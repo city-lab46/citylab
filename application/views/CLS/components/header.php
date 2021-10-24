@@ -11,6 +11,7 @@
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
 
 <script>
 function myFunction() {
@@ -94,6 +95,19 @@ setInterval(function(){
       </div>
       <div class="bttn"><button onclick="window.location.href='<?php echo BASEURL.'/login/logout'?>'">Logout</button></div>
     </div>
+
+    <script>
+$(function(){
+    var current = location.pathname;
+    $('#nav a').each(function(){
+        var $this = $(this);
+        // if the current path is like this link, make it active
+        if($this.attr('href').indexOf(current) !== -1){
+            $this.addClass('active');
+        }
+    })
+})
+</script> 
 
     <div class="info">
     <div class="dropdown">
