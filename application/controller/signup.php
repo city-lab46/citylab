@@ -9,7 +9,7 @@ class signup extends Controller{
     public function index(){
         //Initially no errors
         $data['errors'] = $this->initiate();
-        $this->view->render("signup", $data);
+        $this->view->render("main/signup", $data);
     }
 
     public function initiate(){
@@ -71,11 +71,11 @@ class signup extends Controller{
         if ($numberOfErrors== 0) {
             $userId = $this->model->addPatient($firstname,$lastname,$email,$dob,$gender,$username,$password,$contact,$title);
             $register = $this->model->addPatientId($userId);
-            $this->redirect("login"); 
+            $this->redirect("main/login"); 
         }
         
         $data['errors']=$errors;
-        $this->view->render("signup", $data);
+        $this->view->render("main/signup", $data);
         
     }
 

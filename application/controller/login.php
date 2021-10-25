@@ -13,7 +13,7 @@ class login extends Controller {
         $errors["username"]="";
         $errors["password"]=""; 
         $data['errors']=$errors;
-        $this->view->render("login",$data);
+        $this->view->render("main/login",$data);
     }
 
     public function submit(){
@@ -60,10 +60,10 @@ class login extends Controller {
                         $this->redirect('home/patient');
                     }
                     else if($_SESSION['title'] == "Doctor" ){
-                        $this->redirect('home');
+                        $this->redirect('home/doctor');
                     }
                     else if($_SESSION['title'] == "CLS" ){
-                        $this->redirect('home');
+                        $this->redirect('home/CLS');
                     }
                     else if($_SESSION['title'] == "Receptionist" ){
                         $this->redirect('home');

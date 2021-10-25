@@ -8,6 +8,25 @@ class Homepage extends Controller {
     }
 
     function index(){
-        $this->view->render("homepage");
+        $this->view->render("main/homepage");
     }
+
+    function blogs(){
+        $this->view->render("main/blogs");
+    }
+
+    function services(){
+        $this->view->render("main/services");
+    }
+
+    function about(){
+        $this->view->render("main/about");
+    }
+    
+    function contact(){
+        $this->view->render("main/contact");
+    }
+    
+
+
 }
