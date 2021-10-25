@@ -4,16 +4,14 @@
 .slideshow-container {
   max-width: 700px;
   position: relative;
-  right : -30%;
-  margin: auto;
+  right : -40%;
 }
 .custom-container {
-position : absolute;
+    position : absolute;
     background-color: #edf2f4;
-    padding: 10px;
     box-sizing: border-box;
-    max-width: 500px;
-    top: 65%;
+    max-width: 350px;
+    top: 90%;
     font-size: 19px;
     color: #1281BF;
 }
@@ -21,7 +19,6 @@ position : absolute;
 /* Make the images invisible by default */
 .Containers {
   display: none;
-  
 }
 
 /* forward & Back buttons */
@@ -82,7 +79,7 @@ position : absolute;
   display: inline-block;
   transition: background-color 0.5s ease;
   position: relative;
-  right : -30%;
+  right : -25%;
 }
 
 .enable, .dots:hover {
