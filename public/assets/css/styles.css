@@ -479,8 +479,9 @@ p #date{
     color:rgba(0, 0, 0, 0.65);
   } 
 
-  .nav a i{
-    padding-right: 2px;
+  .nav i{
+    padding-right: 10px;
+    margin-bottom: -2px;
   }
   
   .info{

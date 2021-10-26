@@ -13,7 +13,7 @@ class testDetails extends Controller{
         if($_SESSION['title'] == "CLS" ){
             $this->view->render("CLS/testDetails");
         } 
-        if($_SESSION['title'] == "doctor" ){
+        if($_SESSION['title'] == "Doctor" ){
             $this->view->render("doctor/testDetails");
         }         
     }

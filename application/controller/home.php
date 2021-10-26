@@ -10,7 +10,7 @@ class home extends Controller{
         if($_SESSION['title'] == "CLS" ){
             $this->view->render("CLS/home");
         } 
-        if($_SESSION['title'] == "doctor" ){
+        if($_SESSION['title'] == "Doctor" ){
             $this->view->render("doctor/home");
         }      
     }
@@ -22,7 +22,7 @@ class home extends Controller{
         if($_SESSION['title'] == "CLS" ){
             $this->view->render("CLS/home");
         } 
-        if($_SESSION['title'] == "doctor" ){
+        if($_SESSION['title'] == "Doctor" ){
             $this->view->render("doctor/home");
         }
         
@@ -35,7 +35,7 @@ class home extends Controller{
         if($_SESSION['title'] == "CLS" ){
             $this->view->render("CLS/testTypes");
         } 
-        if($_SESSION['title'] == "doctor" ){
+        if($_SESSION['title'] == "Doctor" ){
             $this->view->render("doctor/testTypes");
         }
     }

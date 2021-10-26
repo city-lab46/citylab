@@ -78,7 +78,7 @@ class login extends Controller {
             }  
         }
         $data['errors']=$errors;
-        $this->view->render("patient/login",$data);
+        $this->view->render("main/login",$data);
     }
 
     public function logout(){

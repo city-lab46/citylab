@@ -15,9 +15,14 @@ class settings extends Controller{
         $this->view->render("patient/settings");
     }
 
-    public function CLS(){             
-      
+    public function CLS(){ 
+
         $this->view->render("CLS/settings");
+    }
+
+    public function doctor(){     
+
+        $this->view->render("doctor/settings");
     }
 
 }
