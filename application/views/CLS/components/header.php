@@ -88,7 +88,7 @@ setInterval(function(){
         <img src="<?php echo BASEURL.'/public/assets/img/logo.jpg'?>" alt=""></img>
       </header>
       <div id="nav">
-        <a class="link" href="<?php echo BASEURL.'/home/CLS'?>"><i class="fas fa-home"></i><span>Home</span></a>
+        <a class="link" href="<?php echo BASEURL.'/home'?>"><i class="fas fa-home"></i><span>Home</span></a>
         <a class="link" href="<?php echo BASEURL.'/report/create'?>"><i class="far fa-file-alt"></i><span>Test Report</span></a>
         <a class="link" href="<?php echo BASEURL.'/inventory/insert'?>"><i class="fas fa-vials"></i><span>Inventory</span></a>
         <a class="link" href="<?php echo BASEURL.'/settings/CLS'?>"><i class="fas fa-cog"></i><span>Settings</span></a>

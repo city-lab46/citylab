@@ -3,31 +3,41 @@ class home extends Controller{
     public function __construct(){
         parent::__construct();
     }
-    public function index(){       
+    public function index(){ 
+        if($_SESSION['title'] == "Patient" ){
+            $this->view->render("patient/home");
+        }  
+        if($_SESSION['title'] == "CLS" ){
+            $this->view->render("CLS/home");
+        } 
+        if($_SESSION['title'] == "doctor" ){
+            $this->view->render("doctor/home");
+        }      
     }
 
-    public function patient(){       
-        $this->view->render("patient/home");
-    }
-
-    public function articles(){       
-        $this->view->render("patient/home");
+    public function articles(){   
+        if($_SESSION['title'] == "Patient" ){
+            $this->view->render("patient/home");
+        }  
+        if($_SESSION['title'] == "CLS" ){
+            $this->view->render("CLS/home");
+        } 
+        if($_SESSION['title'] == "doctor" ){
+            $this->view->render("doctor/home");
+        }
+        
     }
 
     public function testTypes(){       
-        $this->view->render("patient/testTypes");
-    }
-    
-    public function CLS(){       
-        $this->view->render("CLS/home");
-    }
-
-    public function asd(){       
-        $this->view->render("CLS/home");
-    }
-
-    public function qwe(){       
-        $this->view->render("CLS/testTypes");
+        if($_SESSION['title'] == "Patient" ){
+            $this->view->render("patient/testTypes");
+        }  
+        if($_SESSION['title'] == "CLS" ){
+            $this->view->render("CLS/testTypes");
+        } 
+        if($_SESSION['title'] == "doctor" ){
+            $this->view->render("doctor/testTypes");
+        }
     }
 
 }

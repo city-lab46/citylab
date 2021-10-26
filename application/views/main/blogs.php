@@ -61,9 +61,7 @@
         </div>
         <div class="fullwidth-block" data-bg-color="#edf2f4">
             <div class="container">
-                <h2 class="section-title">Articles</h2>
-
-               
+                <h2 class="section-title">Articles</h2>           
                    
                     <div class="col-md-4">
                         <div class="post">

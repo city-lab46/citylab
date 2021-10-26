@@ -59,7 +59,7 @@
 							</div>
 						</div>
 					</li>
-					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-10.jpg'?>">
+					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-10.jpeg'?>">
 						<div class="container">
 							<div class="slide-content">
 

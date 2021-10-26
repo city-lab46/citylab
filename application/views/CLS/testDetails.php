@@ -2,8 +2,8 @@
 <?php include "components/header.php"; ?>
     
     <div class="nav">
-      <a href="<?php echo BASEURL.'/home/asd'?>">Articles</a>
-      <a href="<?php echo BASEURL.'/home/qwe'?>" class="activ">Test Types</a> 
+      <a href="<?php echo BASEURL.'/home/articles'?>">Articles</a>
+      <a href="<?php echo BASEURL.'/home/testTypes'?>" class="activ">Test Types</a> 
     </div> 
 
     <div class="main">

@@ -6,6 +6,8 @@ body {
   padding: 0;
   background-color: white;
   font-family: "lato", sans-serif;
+  background-size: cover;
+  background-image: url("../img/bb.jpg");
   
 }
 
@@ -19,7 +21,7 @@ body {
   .form {
     position: absolute;
     top: 10px;
-    
+    opacity: 0.9;
     background-color: white;
     width: 400px;
     border-radius: 8px;

@@ -57,13 +57,13 @@ class login extends Controller {
                     $_SESSION['gender'] = $user['gender'];
             
                     if($_SESSION['title'] == "Patient" ){
-                        $this->redirect('home/patient');
+                        $this->redirect('home');
                     }
                     else if($_SESSION['title'] == "Doctor" ){
-                        $this->redirect('home/doctor');
+                        $this->redirect('home');
                     }
                     else if($_SESSION['title'] == "CLS" ){
-                        $this->redirect('home/CLS');
+                        $this->redirect('home');
                     }
                     else if($_SESSION['title'] == "Receptionist" ){
                         $this->redirect('home');
