@@ -16,10 +16,10 @@ class signupModel extends Model{
         $dob = $this->db->quote($dob);
         $gender = $this->db->quote($gender);
         $username = $this->db->quote($username);
-        //Password hasing
-        $password = md5($this->db->quote($password));
-        $contact = $this->db->quote($contact);
-    */
+    */  //Password hasing
+        //$password = md5($password);
+        //$contact = $this->db->quote($contact);
+    
         $query = "INSERT INTO user ( first_name, last_name,  email, dob, contact, gender, password, username ,title ) 
                 VALUES('$firstname', '$lastname', '$email', '$dob', '$contact', '$gender', '$password', '$username', '$title')";
         $stmt = $this->db->prepare($query);

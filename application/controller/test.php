@@ -5,17 +5,29 @@ class test extends Controller{
         parent::__construct();
     }
     
-    public function index(){       
-
+    public function index(){   
+        if($_SESSION['title'] == "Patient" ){  
+            $patientId = "P".$_SESSION['user_id']; 
+            $data = [];
+            $result = $this->model->getRecords($patientId);
+            $data['result'] = $result;
+ 
+            $this->view->render("patient/test", $data);
+        }
     }
 
-    public function records(){     
-        //$result = $this->model->getDetails($patientId);  
-        $this->view->render("patient/test");
+    public function records(){  
+        //$_SESSION['title'] = "Doctor"
+        $patientId = $_GET['patientId'];
+        $data = [];
+        $result = $this->model->getRecords($patientId);
+        $data['result'] = $result;
+        
+        $this->view->render("doctor/test", $data);
     }
 
     public function report(){ 
-        //$result = $this->model->getDetails($patientId);      
+        //$result = $this->model->getReport($patientId);      
         $this->view->render("patient/report");
     }
     

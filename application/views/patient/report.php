@@ -1,3 +1,4 @@
+<!-- this has to be on main folder?? -->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="<?php echo BASEURL.'/public/assets/img/favicon.png'?>"/>
-    <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/all.min.css'?>"/>
     <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/report.css'?>"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
 
@@ -14,7 +14,7 @@
         <page size="A4">
             <div class="header">
                 <header>
-                    <img src="assets/favicon.png" alt=""></img>
+                    <img src="<?php echo BASEURL.'/public/assets/img/favicon.png'?>" alt=""></img>
                     <h1> CITY LAB</h1>
                     <div class="address">
                         <p># 114, D.S. SENANAYAKE MW, PANADURA,SRI LANKA.<br> <p>TEL : 0385686844, HOT LINE:071-4411187<br>E-mail : citylab@yahoo.com</p>
@@ -28,19 +28,19 @@
                         <table>
                         <tr>
                             <td>NAME OF THE PATIENT  </td>
-                            <td> :- MR. ADELINE</td>
+                            <td>: MR. ADELINE</td>
                         </tr>
                         <tr>
                             <td>DATE  </td>
-                            <td> :- 1-OCT-2021</td>
+                            <td>: 1-OCT-2021</td>
                         </tr>
                         <tr>
                             <td>SPECIMEN EXAMINED  </td>
-                            <td> :- BLOOD</td>
+                            <td>: BLOOD</td>
                         </tr>
                         <tr>
                             <td>NAME OF THE TEST  </td>
-                            <td> :- F.B.S</td>
+                            <td>: F.B.S</td>
                         </tr>
                         </table>
                     </div>
@@ -48,15 +48,15 @@
                         <table>
                         <tr>
                             <td>PATIENT ID  </td>
-                            <td> :- 0001</td>
+                            <td>: 0001</td>
                         </tr>
                         <tr>
                             <td>AGE  </td>
-                            <td> :- 52Y</td>
+                            <td>: 52Y</td>
                         </tr>
                         <tr>
-                            <td>TEST ID :- </td>
-                            <td> :- 0001</td>
+                            <td>TEST ID </td>
+                            <td>: 0001</td>
                         </tr>
                         </table>
                     </div>

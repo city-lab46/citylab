@@ -2,28 +2,28 @@
 
 class Homepage extends Controller {
 
-    function __construct(){
+    public function __construct(){
         parent::__construct();
         //call model if need
     }
 
-    function index(){
-        $this->view->render("main/homepage");
+    public function index(){
+        $this->view->render("main/Homepage");
     }
 
-    function blogs(){
+    public function blogs(){
         $this->view->render("main/blogs");
     }
 
-    function services(){
+    public function services(){
         $this->view->render("main/services");
     }
 
-    function about(){
+    public function about(){
         $this->view->render("main/about");
     }
     
-    function contact(){
+    public function contact(){
         $this->view->render("main/contact");
     }
     

@@ -1,0 +1,70 @@
+  .form {
+    /* position: absolute; */
+    opacity: 0.9;
+    background-color: white;
+    width: 400px;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+    margin-bottom: 20px;
+    /* z-index: 0; */
+  }
+
+  .inputContainer {
+    overflow: visible;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 15px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+  }
+
+  ::placeholder {
+    color: black;
+  }
+  .label {
+    position: absolute; 
+    top: -7px;
+    left: 5px;
+    padding: 0 4px;
+    background-color: white;
+    transition: 0.5s;
+    z-index: 1;
+    font-size: 12px;
+    color: var(--color1);
+  }
+  .input:focus + .label {
+    font-size: 14px;
+  }
+  .input:focus::placeholder {
+    color: var(--color2);
+  }
+  .input:focus {
+    border: 2px solid var(--color1);
+  }
+  .submitBtn {
+    display: block;
+    margin-left: auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--color1);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 15px;
+  }

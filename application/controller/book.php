@@ -8,36 +8,38 @@ class book extends Controller{
 	}
 
 	public function index(){
-		$patientId = "P".$_SESSION['user_id'];
+		//if($_SESSION['title'] == "Patient" ){
 		$data = [];
-		$result = $this->model->getBookDetails($patientId);
-		$data['result'] = $result;
-		$this->view->render("patient/book",$data);
+        $result = $this->model->getTests();
+        $data['result'] = $result;
+
+        $this->view->render("patient/book", $data);
 	}
 
-	public function insert(){
+	public function create(){
+		//isset() date and test
 		$patientId = "P".$_SESSION['user_id'];
-		$date =  $_POST['date'];
-		$testID =  $_POST['testID'];
+		$date =  $_GET['date'];
+		$testId =  $_GET['testId'];
 		$count = $this->model->bookCount($patientId);
 		
 		if($count == 0){
 			$bookingId = $this->model->bookInsert($patientId,$date);
-			$test = $this->model->testInsert($testID,$bookingId);
+			$test = $this->model->testInsert($testId,$bookingId);
             $this->redirect("pay");
 		}
 		else{
 			echo "<script>alert('Already Placed Booking.')</script>";
-			echo "<script>window.location.href='index'</script>";
+			echo "<script>window.location.href='../home'</script>";
 		}
 	}
 
 	public function cancel(){
-		$bookingId = $_POST['bookingID'];
+		$bookingId = $_POST['bookingId'];
 		
 		$result = $this->model->bookCancel($bookingId);
-		echo "<script>alert('Cancel Booking')</script>";
-		echo "<script>window.location.href='index'</script>";
+		echo "<script>alert('Booking Canceled')</script>";
+		echo "<script>window.location.href='../home'</script>";
 	}
 
 }

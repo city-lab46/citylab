@@ -1,85 +1,212 @@
-.main{
-  overflow-y: auto;
+.card{
+    position: relative;
+
+    width: 52%;
+    height: 110px;
+    padding: 2px 16px 10px;
+    margin-top: 10px;
+    background-color: #CBE5CC;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    color: var(--color1);
+    font-style: normal;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card:after {
+	content:'';
+    top:0;
+	transform:translateX(100%);
+	width:100%;
+	height:100%;
+	position: absolute;
+	z-index:1;
+	animation: slide 1s 3 1s;
+
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(128,186,232,0) 99%, rgba(125,185,232,0) 100%);
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255, 255, 255, 0.8)), color-stop(99%,rgba(128,186,232,0)), color-stop(100%,rgba(125,185,232,0)));
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255, 255, 255, 0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%);
+	background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255, 255, 255, 0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%);
+	background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255, 255, 255, 0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255, 255, 255, 0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#007db9e8',GradientType=1 );
+}
+
+@keyframes slide {
+	0% {transform:translateX(-100%);}
+    50% {transform:translateX(-100%);}
+	100% {transform:translateX(100%);}
+}
+
+.card div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+}
+.card div span{
+    display: flex;
+    justify-content: center;
+    font-weight: normal;
+    font-size: 16px;
+}
+.card div span i{
+    margin: 1px 8px;
+}
+.line{
+    margin-top: -1px;
+    background-color: var(--color1);
+    height: 2px;
+    width: 100%;
+}
+
+form{
+    margin: 0;
+}
+
+.button{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 8px 22px;
+    background: var(--color4);
+    font-family: 'Roboto', sans-serif;
+    border-radius: 7px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.button:hover{
+    background: rgb(34, 150, 34);
 }
 
 .box{
-    position: relative;
-    top: 5%;
-    left: 10%;
-  
-    height: 30%;
-    width: 80%;
-    margin-top: 20px;
+    position: relative; 
+    width: 52%;
+    padding: 10px 16px 10px;
+    margin: 15px 0px 10px;
+    background-color: white;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
     
-    border-radius: 10px;  
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 10px;
-    background-color: rgba(69, 147, 226, 0.068);
-  }
-
-  .box > div{
-    height: 20%;
-    padding-left: 10px;
-    padding-top: 5px;
-    border-left:#818181;
-    font-weight: 550;
-    color: dodgerblue;
-  }
-  .box > div > span{
-    font-weight: 500;
-    margin-left: 10px;
-    padding-left: 10px;
-    border-left:2px solid #818181;
-    color: #818181;
-  }  
-
-  .box > p{
-    padding-left: 10px;
-  }
-
-  .btn{
-    position: absolute;
-    bottom: 10px;
-    right: 25px;
-    background-color: rgb(69, 148, 226);
-    border-radius: 10px;
-    color: white;
+}
+.title{
+    width: 100%;
+    height: 30px;
+    border-bottom: solid 1px var(--color3);
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+.content{
+    overflow: auto;
+    width: 100%;
+    min-height: 120px;
+    border-bottom: solid 1px var(--color3);
     font-size: 14px;
-    font-weight: 550;
-    border: none;
-    padding: 8px 20px;
-    box-shadow: 0 3px #999;
-  }
-
-  .btn:hover{
-    background-color: rgb(61, 128, 196);
-  }
-  .btn:active {
-    box-shadow: 0 2px #666;
-    transform: translateY(2px);
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+}
+.content span{
+    width: 100%;
+    font-size: 14px;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+.rate{
+    width: 100%;
+    height: 35px;
+    font-size: 14px;
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+}
+.rate span{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+.rate-area {
+    margin-left: 10px;
   }
   
-  @media screen and (max-width: 1000px){
+  .rate-area:not(:checked) > input {
+    position: absolute;
+    top: -9999px;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  .rate-area:not(:checked) > label {
+    float: right;
+    width: 0.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 150%;
+    color: lightgrey;
+  }
+  
+  .rate-area:not(:checked) > label:before {
+    content: "★";
+  }
+  
+  .rate-area > input:checked ~ label {
+    color: gold;
+  }
+  
+  .rate-area:not(:checked) > label:hover,
+  .rate-area:not(:checked) > label:hover ~ label {
+    color: var(--color1);
+  }
+  
+  .rate-area > input:checked + label:hover,
+  .rate-area > input:checked + label:hover ~ label,
+  .rate-area > input:checked ~ label:hover,
+  .rate-area > input:checked ~ label:hover ~ label,
+  .rate-area > label:hover ~ input:checked ~ label {
+    color: var(--color1);
+  }
+@media screen and (max-width: 850px) {
+    .card{
+        height: 100px;
+    }
+    .card div{
+        font-size: 15px;
+    }
+    .card div span{
+        font-size: 14px;
+    }
+    .button{
+        width: 90px;
+        height: 30px;
+    }
     .box{
-      font-size: 14px;
-      
+        width: 70%;
     }
-  }
-  
-  @media screen and (max-width: 850px){
-  
-    
-  }
-  
-  @media screen and (max-width: 450px){
-  
-    .box{
-      font-size: 12px;
-    }
-    
-    .btn{
-      font-size: 12px;
-      padding: 5px 10px;
+}
 
+@media screen and (max-width: 450px) {
+    .box , .card{
+        width: 90%;
     }
-  }
+    .card{
+        height: 90px;
+    }
+    .box{
+        height: 220px;
+    }
+}

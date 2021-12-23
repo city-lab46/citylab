@@ -20,6 +20,7 @@ body {
 
   .form {
     position: absolute;
+    opacity: 0.9;
     top: 10px;
     background-color: white;
     width: 400px;
@@ -37,8 +38,8 @@ body {
     width: 90%;
     margin-bottom: 15px;
   }
-  
-.input {
+
+  .input {
     position: absolute;
     top: 0px;
     left: 0px;

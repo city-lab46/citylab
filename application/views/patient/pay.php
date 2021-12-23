@@ -1,64 +1,49 @@
-<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/book.css'?>"/>
-<?php include "components/header.php"; ?>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/formInput.css'?>"/>
 <?php include "components/sidenav.php"; ?>
-    
-    <div class="nav">
-      <a href="<?php echo BASEURL.'/book'?>">Book Test</a>
-      <a class="activ" href="<?php echo BASEURL.'/pay'?>">Pay Test</a>
-    </div> 
 
     <div class="main">
-      <div class="box">
-      
-      <?php 
-        $result=$data['result'];
-        foreach ($result as $row): 
-      ?>
-        <form action="https://sandbox.payhere.lk/pay/checkout" method="post">
-          <div class="form">
+        
+        <form class="form" action="https://sandbox.payhere.lk/pay/checkout" method="post">
+            
+            <?php $result=$data['result']; ?>
+            
+            <input type="hidden" name="merchant_id" value="">    <!-- Replace your Merchant ID -->
+            <input type="hidden" name="return_url" value="http://7ba9a4e322be.ngrok.io/payhere/payhandler.php">
+            <input type="hidden" name="cancel_url" value="http://7ba9a4e322be.ngrok.io">
+            <input type="hidden" name="notify_url" value="http://7ba9a4e322be.ngrok.io">  
+            <!-- <input type="hidden" name="order_id" value="<?php echo $data['adId']; ?>">
+            <input type="hidden" name="items" value="Advertisement ID : <?php echo $data['adData']['advertisementID']; ?>"><br>
+            <input type="hidden" name="currency" value="LKR">
+            <input type="hidden" name="amount" value="<?php echo $data['adPrice']+$data['adPay']; ?>">  
+            <input type="hidden" name="first_name" value="<?php echo $data['jobData']['userName']; ?>"> -->
+            <input type="hidden" name="last_name" value="">
+            <input type="hidden" name="email" value="samanp@gmail.com">
+            <input type="hidden" name="phone" value="0771234567">
+            <input type="hidden" name="address" value="No.1, Galle Road">
+            <input type="hidden" name="city" value="Colombo">
+            <input type="hidden" name="country" value="Sri Lanka">
 
-              <input type="hidden" name="merchant_id" value="1218755">
-              <input type="hidden" name="return_url" value="">
-              <input type="hidden" name="cancel_url" value="">
-              <input type="hidden" name="notify_url" value="">
-              <input type="hidden" name="order_id" value="ItemNo12345">
-              <input type="hidden" name="items" value="Door bell wireless">
-              <input type="hidden" name="currency" value="LKR">
-              <input type="hidden" name="amount" value="1000">
-              <input type="hidden" name="first_name" value="Saman">
-              <input type="hidden" name="last_name" value="Perera">
-              <input type="hidden" name="email" value="samanp@gmail.com">
-              <input type="hidden" name="phone" value="0771234567">
-              <input type="hidden" name="address" value="No.1, Galle Road">
-              <input type="hidden" name="city" value="Colombo">
-              <input type="hidden" name="country" value="Sri Lanka">  
-              
-              <div class="field">
-                <p>Name<span class="data"><?php echo "Mr. ".$_SESSION['first_name']." ".$_SESSION['last_name'];?></span></p>
-              </div>
+            <div class="inputContainer">
+                <input type="text" name="name" id="name" class="input" value="<?php echo $_SESSION['first_name'] . " ". $_SESSION['last_name'];?>" readonly>
+                <label for="name" class="label">Name</label>
+            </div>
+            <div class="inputContainer">
+                <input type="text" name="date" id="date" class="input" value="<?php echo $result[0][2]; ?>" readonly>
+                <label for="date" class="label">Date</label>
+            </div>
+            <div class="inputContainer">
+                <input type="text" name="test" id="test" class="input" value="<?php echo $result[0][7]; ?>" readonly>
+                <label for="test" class="label">Test</label>
+            </div>
+            <div class="inputContainer">
+                <input type="text" name="cost" id="cost" class="input" value="<?php echo $result[0][8]; ?>" readonly>
+                <label for="cost" class="label">Amount (LKR)</label>
+            </div>
+    
+            <button class="submitBtn">Pay</button>
 
-              <div class="field">
-                <p>Test<span class="data"><?php echo  $row["name"] ;?></span></p>
-              </div>
-              <div class="field">
-                <p>Date<span class="data"><?php echo  $row["created_date"] ;?></span></p>
-              </div>
-              <div class="field">
-                <p>Contact<span class="data"><?php echo $_SESSION['contact'];?></span></p>
-              </div>
-              <div class="field">
-                <p>Pay Amount<span class="data"><?php echo  $row["cost"] ;?></span></p>
-              </div>
-          </div>
-
-          <div class="btn">
-            <button class="button3" type="submit"><i class="fas fa-credit-card"></i>Pay now</button>
-          </div>
-     
         </form>
-        <?php endforeach;?>
-      </div>
 
-    </div>
-  </div>
+    </div> 
 </body>
+</html>

@@ -5,39 +5,30 @@ class home extends Controller{
     }
     public function index(){ 
         if($_SESSION['title'] == "Patient" ){
-            $this->view->render("patient/home");
-        }  
-        if($_SESSION['title'] == "CLS" ){
-            $this->view->render("CLS/home");
-        } 
-        if($_SESSION['title'] == "Doctor" ){
-            $this->view->render("doctor/home");
-        }      
-    }
 
-    public function articles(){   
-        if($_SESSION['title'] == "Patient" ){
-            $this->view->render("patient/home");
-        }  
-        if($_SESSION['title'] == "CLS" ){
-            $this->view->render("CLS/home");
-        } 
-        if($_SESSION['title'] == "Doctor" ){
-            $this->view->render("doctor/home");
-        }
-        
-    }
+            $patientId = "P".$_SESSION['user_id'];
+            $data = [];
+            $articles = $this->model->getArticle();
+            $data['articles'] = $articles;
 
-    public function testTypes(){       
-        if($_SESSION['title'] == "Patient" ){
-            $this->view->render("patient/testTypes");
+            $book = $this->model->getBookDetails($patientId);
+            $data['book'] = $book;
+
+            $this->view->render("patient/home", $data);
         }  
-        if($_SESSION['title'] == "CLS" ){
-            $this->view->render("CLS/testTypes");
-        } 
+         
         if($_SESSION['title'] == "Doctor" ){
-            $this->view->render("doctor/testTypes");
-        }
+            $data = [];
+            $articles = $this->model->getArticle();
+            $data['articles'] = $articles;
+
+            $this->view->render("doctor/home", $data);
+        }   
+
+        if($_SESSION['title'] == "Receptionist" ){           
+            
+            $this->view->render("receptionist/home");
+        }   
     }
 
 }

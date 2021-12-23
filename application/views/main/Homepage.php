@@ -12,8 +12,8 @@
 		<link href="<?php echo BASEURL.'/public/assets/css/all.min.css'?>" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/homepage.css'?>">
-	
+		
+	    <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/style.css'?>">
 
 	</head>
 
@@ -24,19 +24,24 @@
 				<div class="container">
 					<div class="header-bar">
 						<div class="branding">
-							<img class="logo" src="" alt="logo">
+						<img src="<?php echo BASEURL.'/public/assets/img/logo2.png'?>" alt="" class="logo">
 						</div>
 
 						<nav class="main-navigation">
 							<button class="menu-toggle"><i class="fa fa-bars"></i></button>
 							<ul class="menu">
-								<li class="home menu-item current-menu-item"><a href="<?php echo BASEURL?>">Home</a></li>
+							
+								<li class="home menu-item current-menu-item"><a href="<?php echo BASEURL.'/homepage'?>">Home</a></li>
 								<li class="menu-item"><a href="<?php echo BASEURL.'/homepage/blogs'?>">Blogs</a></li>
 								<li class="menu-item"><a href="<?php echo BASEURL.'/homepage/services'?>">Services</a></li>
 								<li class="menu-item"><a href="<?php echo BASEURL.'/homepage/about'?>">About</a></li>
 								<li class="menu-item"><a href="<?php echo BASEURL.'/homepage/contact'?>">Contact</a></li>
-								<li class="menu-item"><a href="<?php echo BASEURL.'/signup' ?>">Sign Up</a></li>
-								<li class="menu-item"><a href="<?php echo BASEURL.'/login' ?>">Login</a></li>
+								
+								<li class="menu-item" ><a href="<?php echo BASEURL.'/signup' ?>" id="signup">Sign Up</a></li>
+								
+								
+								<li class="menu-item" ><a href="<?php echo BASEURL.'/login' ?>" id="login">Login</a></li>
+                                
 							</ul>
 						</nav>
 
@@ -51,29 +56,29 @@
 					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-7.jpg'?>">
 						<div class="container">
 							<div class="slide-content">
-
-								<p ><small>City Lab is a medical lab in Panandura.Here, you can take test types including blood and urine. There are other facilities also.They are booking and online payment...</small>
+							<h1>Could Your Lab Do More For You?</h1>
+								<p ><small>City Lab is a medical lab in Panandura.Here, you can take test types<br>  including blood and urine. There are other facilities also.<br> They are booking and online payment...</small>
 								</p>
 
 								<a href="<?php echo BASEURL.'/homepage/services'?>" class="button" >Learn more</a>
 							</div>
 						</div>
 					</li>
-					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-10.jpeg'?>">
+					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-7.jpg'?>">
 						<div class="container">
 							<div class="slide-content">
-
-								<p><small>City Lab is a medical lab in Panandura.Here,you can take test types including blood and urine. There are other facilities also.They are booking and online payment...</small>
+							<h1>Could Your Lab Do More For You?</h1>
+								<p><small>City Lab is a medical lab in Panandura.Here,you can take test types<br> including blood and urine. There are other facilities also.<br> They are booking and online payment...</small>
 								</p>
 								<a href="<?php echo BASEURL.'/homepage/services'?>" class="button" >Learn more</a>
 							</div>
 						</div>
 					</li>
-					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-2.jpg'?>">
+					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-7.jpg'?>">
 						<div class="container">
 							<div class="slide-content">
-
-								<p><small>City Lab is a medical lab in Panandura. Here,you can take test types including blood and urine. There are other facilities also.They are booking and online payment...</small>
+                                <h1>Could Your Lab Do More For You?</h1>
+								<p><small>City Lab is a medical lab in Panandura. Here,you can take test types <br> including blood and urine. There are other facilities also.<br> They are booking and online payment...</small>
 								</p>
 								<a href="<?php echo BASEURL.'/homepage/services'?>" class="button" >Learn more</a>
 							</div>
@@ -96,7 +101,7 @@
 								</div>
 							</div>
 							<div class="col-md-3 col-sm-6">
-								<div class="feature">
+								<div class="feature" id="lab-info">
 									<img src="<?php echo BASEURL.'/public/assets/img/icon-genetics-small.png'?>" alt="" class="feature-image">
 									<h2 class="feature-title">Lab Info</h2>
 									<p style ="text-align:left;">City Lab is a medical lab in Panandura. Here, you can take test types including blood and urine. There are other facilities also. They are booking and online payment.We are introducing a web application that remotely connects all patients, doctors, employees and doctors with the facility.
@@ -109,32 +114,35 @@
 					</div> <!-- .container -->
 				</div> <!-- .fullwidth-block -->
 
-				<div class="fullwidth-block" data-bg-color="#edf2f4">
+				<div class="fullwidth-block" data-bg-color="rgb(41,41,85)">
 					<div class="container">
 						<h2 class="section-title">Latest Articles</h2>
 						<div class="row">
 							<div class="col-md-4">
 								<div class="post">
-									<figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-4.png'?>" alt=""></figure>
+									<figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-22.jpg'?>" alt=""></figure>
 									<h2 class="entry-title"><a href="">Human biomonitoring</a></h2>
-									<small class="date">2 oct 2014</small>
+									<small class="date">2 oct 2021</small>
 									<p>Human biomonitoring in urine samples from the Environmental Specimen Bank reveals a decreasing trend over time in the exposure to the fragrance chemical lysmeral from 2000 to 2018...</p>
+                                    <p style="text-align:right;"> Posted by Dr.H.H.R.Samarasinghe.</p>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="post">
-									<figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-5.png'?>" alt=""></figure>
+									<figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-23.jpg'?>" alt=""></figure>
 									<h2 class="entry-title"><a href="">e-cigarette (EC)</a></h2>
-									<small class="date">2 oct 2014</small>
+									<small class="date">30 August 2021</small>
 									<p>The formation of carbonyls and epoxides in e-cigarette (EC) aerosol is possible due to heating of the liquid constituents. However, high background levels of these compounds...</p>
+                                    <p style="text-align:right;"> Posted by Dr.K.P.Senevirathne.</p>
 								</div>
 							</div>
 							<div class="col-md-4">
 								<div class="post">
 									<figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-6.png'?>" alt=""></figure>
 									<h2 class="entry-title"><a href="">Analysis of NNN</a></h2>
-									<small class="date">2 oct 2014</small>
+									<small class="date">12 August 2021</small>
 									<p>Quantitative analysis of NNN in plasma by LC-MS/MS: a suitable alternative to urinary determination to assess the exposure to this important toxicant...</p>
+                                    <p style="text-align:right;"> Posted by Dr.S.R.Perera.</p>
 								</div>
 							</div>
 						</div> <!-- .row -->

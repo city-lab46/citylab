@@ -5,8 +5,12 @@ class notification extends Controller{
         parent::__construct();
     }
     
-    public function index(){  
-        $this->view->result1 = $this->model->getUnSeenNotifications();
+    public function index(){ 
+		if($_SESSION['title'] == "Receptionist" ){
+			 $this->view->render("receptionist/createNotification");
+		}
+		
+        /*$this->view->result1 = $this->model->getUnSeenNotifications();
         $count1 =  $this->view->result1;
         $count = $count1->num_rows;
         if(isset($_POST['view'])){
@@ -39,6 +43,10 @@ class notification extends Controller{
                  <li><button onclick="myFunction()" class="text-bold text-italic">No Notification Found</button></li>';
             }     
         
+		}*/
+	}
+	
+	public function notificationHistory(){  
+        $this->view->render("receptionist/notificationHistory");
     }
-}
 }

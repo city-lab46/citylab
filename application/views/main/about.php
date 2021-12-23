@@ -24,13 +24,13 @@
             <div class="container">
                 <div class="header-bar">
                     <div class="branding">
-                        <img src="" alt="" class="logo">
+                        <img src="<?php echo BASEURL.'/public/assets/img/logo2.png'?>" alt="" class="logo">
                     </div>
 
                     <nav class="main-navigation">
                         <button class="menu-toggle"><i class="fa fa-bars"></i></button>
                         <ul class="menu">
-                            <li class="menu-item"><a href="<?php echo BASEURL?>">Home</a></li>
+                            <li class="menu-item"><a href="<?php echo BASEURL.'/homepage'?>">Home</a></li>
 							<li class="menu-item"><a href="<?php echo BASEURL.'/homepage/blogs'?>">Blogs</a></li>
 							<li class="menu-item"><a href="<?php echo BASEURL.'/homepage/services'?>">Services</a></li>
 							<li class="home menu-item current-menu-item"><a href="<?php echo BASEURL.'/homepage/about'?>">About</a></li>

@@ -5,15 +5,15 @@ class bookModel extends Model{
         parent::__construct();
     }
 
-    function getBookDetails($patientID){
-        $query = "SELECT * FROM booking INNER JOIN booking_test_type ON booking.booking_id = booking_test_type.booking_id INNER JOIN test ON test.test_id = booking_test_type.test_id WHERE patient_id = '$patientID' LIMIT 1";
+    function getTests(){
+        $query = "SELECT * FROM test";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();
     }
 
     function bookCount($patientId){
-        $query = "SELECT * FROM booking WHERE patient_id = '$patientId '";
+        $query = "SELECT * FROM booking WHERE patient_id = '$patientId'";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $count = $stmt->rowCount();

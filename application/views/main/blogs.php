@@ -23,13 +23,13 @@
         <div class="container">
             <div class="header-bar">
                 <div class="branding">
-                    <img class="logo" src="" alt="logo">
+                <img src="<?php echo BASEURL.'/public/assets/img/logo2.png'?>" alt="" class="logo">
                 </div>
 
                 <nav class="main-navigation">
                     <button class="menu-toggle"><i class="fa fa-bars"></i></button>
                     <ul class="menu">
-                        <li class="menu-item"><a href="<?php echo BASEURL?>">Home</a></li>
+                        <li class="menu-item"><a href="<?php echo BASEURL.'/homepage'?>">Home</a></li>
 						<li class="home menu-item current-menu-item"><a href="<?php echo BASEURL.'/homepage/blogs'?>">Blogs</a></li>
 						<li class="menu-item"><a href="<?php echo BASEURL.'/homepage/services'?>">Services</a></li>
 						<li class="menu-item"><a href="<?php echo BASEURL.'/homepage/about'?>">About</a></li>
@@ -43,10 +43,11 @@
             </div>
         </div>
     </header>
-    <div class="page-head" data-bg-image="<?php echo BASEURL.'/public/assets/img/image-2.jpg'?>">
+    
+    <div class="page-head" data-bg-image="<?php echo BASEURL.'/public/assets/img/image-26.jpg'?>">
         <div class="container">
-            <h2 class="page-title">Articles</h2>
-            <small>All articles here. </small>
+            <h1 class="page-title">Articles</h1>
+            <small >All articles here. </small>
         </div>
     </div>
 
@@ -59,13 +60,13 @@
                 <a href="#">###</a>
             </div>
         </div>
-        <div class="fullwidth-block" data-bg-color="#edf2f4">
+        <div class="fullwidth-block" data-bg-color="rgb(41,41,85)">
             <div class="container">
                 <h2 class="section-title">Articles</h2>           
                    
                     <div class="col-md-4">
                         <div class="post">
-                            <figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-4.png'?>" alt=""></figure>
+                            <figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-22.jpg'?>" alt=""></figure>
                             <h2 class="entry-title"><a href="">Human biomonitoring</a></h2>
                             <small class="date">2 oct 2014</small>
                             <p>Human biomonitoring in urine samples from the Environmental Specimen Bank reveals a decreasing trend over time in the exposure to the fragrance chemical lysmeral from 2000 to 2018...</p>
@@ -76,9 +77,9 @@
                    
                     <div class="col-md-4">
                         <div class="post">
-                            <figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-5.png'?>" alt=""></figure>
+                            <figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-23.jpg'?>" alt=""></figure>
                             <h2 class="entry-title"><a href="">e-cigarette (EC)</a></h2>
-                            <small class="date">2 oct 2014</small>
+                            <small class="date">30 August 2021</small>
                             <p>The formation of carbonyls and epoxides in e-cigarette (EC) aerosol is possible due to heating of the liquid constituents. However, high background levels of these compounds...</p>
                             <p style="text-align:right;"> Posted by Dr.K.P.Senevirathne.</p>
                         </div>
@@ -86,10 +87,10 @@
                    
                     <div class="col-md-4">
                         <div class="post">
-                            <figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-6.png'?>" alt=""></figure>
-                            <h2 class="entry-title"><a href="">Analysis of NNN</a></h2>
-                            <small class="date">2 oct 2014</small>
-                            <p>Quantitative analysis of NNN in plasma by LC-MS/MS: a suitable alternative to urinary determination to assess the exposure to this important toxicant...</p>
+                            <figure class="featured-image"><img src="<?php echo BASEURL.'/public/assets/img/image-27.jpg'?>" alt=""></figure>
+                            <h2 class="entry-title"><a href="">Mental Health Problems and Treatment Consideration</a></h2>
+                            <small class="date">12 August 2021</small>
+                            <p>Mental health problems are very common among college students [1]. This may be due to the fact that attending college....</p>
                             <p style="text-align:right;"> Posted by Dr.S.R.Perera.</p>
                         </div>
                     </div>

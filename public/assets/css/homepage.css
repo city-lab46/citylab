@@ -1235,7 +1235,7 @@ form input[type="submit"], form button, form input[type="reset"] {
     border-radius: 5px;
     background: #edf2f4;
     list-style: none; }
-    .mobile-navigation .menu a {
+  .mobile-navigation .menu a {
       color: #8e9ca5;
       padding: 15px 20px;
       display: block;
@@ -1243,12 +1243,12 @@ form input[type="submit"], form button, form input[type="reset"] {
       text-transform: uppercase;
       -webkit-transition: .3s ease;
               transition: .3s ease; }
-      .mobile-navigation .menu a:hover, .mobile-navigation .menu a:active {
+  .mobile-navigation .menu a:hover, .mobile-navigation .menu a:active {
         background: #c6dfea;
         color: white; }
-    .mobile-navigation .menu .menu-item {
+  .mobile-navigation .menu .menu-item {
       border-bottom: 1px solid white; }
-      .mobile-navigation .menu .menu-item:last-child {
+    .mobile-navigation .menu .menu-item:last-child {
         border-bottom: none; }
 
 .hero {
@@ -1281,6 +1281,8 @@ form input[type="submit"], form button, form input[type="reset"] {
     padding-top: 300px;
     color: white;
     width: 80%;
+    font-size: large;
+    font-weight: 600;
     margin: 0 auto; }
     .hero .slide-content .slide-title {
       font-size: 60px;

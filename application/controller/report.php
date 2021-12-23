@@ -6,6 +6,7 @@ class report extends Controller{
     }
     public function index(){    
 
+        $this->view->render("patient/report");
     }
 
     public function create(){
