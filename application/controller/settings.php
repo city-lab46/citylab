@@ -32,6 +32,15 @@ class settings extends Controller{
 
             $this->view->render("receptionist/settings", $data);
         }
+        if($_SESSION['title'] == "CLS" ){
+            $userId = $_SESSION['user_id'];
+
+            $data = [];
+            $result = $this->model->getData($userId);
+            $data['result'] = $result;
+                    
+            $this->view->render("CLS/settings", $data);
+        }
     }
 
     public function profile(){

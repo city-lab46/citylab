@@ -1,97 +1,61 @@
-<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/inventoryHistory.css'?>"/>
-<?php include "components/header.php"; ?>
-
-<script src="../js/jquery-3.6.0.min.js" type="text/javascript">
-</script>
-
-    
-    <div class="nav">
-      <a href="<?php echo BASEURL.'/inventory/insert'?>" ><i class="fas fa-plus-circle"></i>Add Inventory</a>  
-      <a href="<?php echo BASEURL.'/inventory/history'?>" class="activ">Inventory History</a> 
-    </div> 
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/table.css'?>"/>
+<?php include "components/sidenav.php"; ?> 
 
     <div class="main">
+
+      <?php 
+
+        $datas = $this->result;
+
+        if(!empty($datas)){
+          foreach($datas as $data){
+          $inventory_id = $data['inventory_id'];
+          $name= $data['name'];
+          $count= $data['count'];
+      ?>
+
       <div class="search">
         <form action=" " method="post">
-          <input type="text" name="search" placeholder="search" > 
+          <input type="text" name="search" placeholder="search" >
+          <button type="submit" name="search_btn" class="fabtn" id="searchbtn" ><i class="fa fa-search fa-lg" ></i></button>
         </form>
       </div>
-
+    
       <div class="table-container">
         
-        <table id="sample_data" class="table">
+        <table class="styled-table">
           <thead>
           <tr>
            <th>ID</th>
             <th>Name</th>
             <th>Count</th>
-            <th>Action</th>
-            
-            
+            <!-- <th>Action</th> --> 
           </tr>
         </thead>
-        <tbody id="myTable">
+
+        <tbody >
            
           <tr>        
-            <td data-label = "ID" >1</td>
-            <td data-label = "Name" >Test tubes</td>
-            <td data-label = "Count" >24</td>
-            <td data-label = "#">
+            <td data-label = "ID" ><?php echo $inventory_id; ?></td>
+            <td data-label = "Name" ><?php echo $name; ?></td>
+            <td data-label = "Count" ><?php echo $count; ?></td>
+            <!-- <td data-label = "#"> -->
              
-              <a href=" " ><i class="fas fa-pen-square"></i></a>
-              <a href=" " ><i class="fas fa-trash-alt"></i></a>
+              <!-- <a class="bttn1" href="<?php echo BASEURL.'/inventory/updateInventory?inventory_id='.$data['inventory_id'].''?> " ><i class="fas fa-pen-square"></i></a> -->
               
-            </td>
-          </tr>
-          <tr>        
-            <td data-label = "ID" >2</td>
-            <td data-label = "Name" >Test tubes</td>
-            <td data-label = "Count" >24</td>
-            <td data-label = "#">
-             
-              <a href=" " ><i class="fas fa-pen-square"></i></a>
-              <a href=" " ><i class="fas fa-trash-alt"></i></a>
               
-            </td>
+            <!-- </td> -->
           </tr>
-          <tr>        
-            <td data-label = "ID" >3</td>
-            <td data-label = "Name" >crucible tong</td>
-            <td data-label = "Count" >10</td>
-            <td data-label = "#">
-             
-              <a href=" " ><i class="fas fa-pen-square"></i></a>
-              <a href=" " ><i class="fas fa-trash-alt"></i></a>
-              
-            </td>
-          </tr>
-          <tr>        
-            <td data-label = "ID" >4</td>
-            <td data-label = "Name" >disposable pipette</td>
-            <td data-label = "Count" >8</td>
-            <td data-label = "#">
-             
-              <a href=" " ><i class="fas fa-pen-square"></i></a>
-              <a href=" " ><i class="fas fa-trash-alt"></i></a>
-              
-            </td>
-          </tr>
-          <tr>        
-            <td data-label = "ID" >5</td>
-            <td data-label = "Name" >erlenmeyer flasks</td>
-            <td data-label = "Count" >15</td>
-            <td data-label = "#">
-             
-              <a href=" " ><i class="fas fa-pen-square"></i></a>
-              <a href=" " ><i class="fas fa-trash-alt"></i></a>
-              
-            </td>
-          </tr>
+          <?php
+              }   
+            }else{
+                echo "No tools available";
+            }
+          ?>
+          
         </tbody>
-        </table>
-      
-
+      </table>
     </div>  
-
   </div>
+
 </body>

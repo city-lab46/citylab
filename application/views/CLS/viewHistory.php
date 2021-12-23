@@ -1,11 +1,6 @@
-<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/reportHistory.css'?>"/>
-<?php include "components/header.php"; ?>
-
-
-    <div class="nav">
-      <a href="<?php echo BASEURL.'/report/create'?>"><i class="fas fa-plus-circle"></i>Create Report</a>
-      <a href="<?php echo BASEURL.'/report/history'?>" class="activ">View History</a> 
-    </div>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/form.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/table.css'?>"/>
+<?php include "components/sidenav.php"; ?>
 
     <div class="main">
       
@@ -19,9 +14,10 @@
         </form>
       
       </div>
+      
       <div class="table-container">
       
-        <table id="sample_data" class="table" >
+        <table id="sample_data" class="styled-table" >
           <thead>
             <tr>
               <th>ID</th>

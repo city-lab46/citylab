@@ -28,7 +28,14 @@ class home extends Controller{
         if($_SESSION['title'] == "Receptionist" ){           
             
             $this->view->render("receptionist/home");
-        }   
+        } 
+        
+        if($_SESSION['title'] == "CLS" ){           
+            
+            $this->view->render("CLS/home");
+        } 
+
+
     }
 
 }
