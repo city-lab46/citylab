@@ -9,6 +9,7 @@ if(isset($_GET['patient_id'])){
 ?>
 
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/form.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/back.css'?>"/>
 <?php include "components/sidenav.php"; ?>   
 
     <div class="main">
@@ -87,7 +88,7 @@ if(isset($_GET['patient_id'])){
       </div>
 
       <div class="pages">
-        <a href=" <?php echo BASEURL.'/createReport'?>"  class="btn11">Back</a> 
+        <a href=" <?php echo BASEURL.'/report'?>"  class="btn11">Back</a> 
       </div>
     </div>
     

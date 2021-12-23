@@ -1,26 +1,21 @@
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/table.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/search.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/search.css'?>"/>
 <?php include "components/sidenav.php"; ?> 
 
     <div class="main">
-
-      <?php 
-
-        $datas = $this->result;
-
-        if(!empty($datas)){
-          foreach($datas as $data){
-          $inventory_id = $data['inventory_id'];
-          $name= $data['name'];
-          $count= $data['count'];
-      ?>
-
-      <div class="search">
-        <form action=" " method="post">
+    <div class="searchBox">
+        <form action="<?php echo BASEURL.'/inventory/search'?>" method="post">
           <input type="text" name="search" placeholder="search" >
-          <button type="submit" name="search_btn" class="fabtn" id="searchbtn" ><i class="fa fa-search fa-lg" ></i></button>
+          <i class="fa fa-search fa-lg" ></i>
+          
         </form>
       </div>
     
+
+      
+
+     
       <div class="table-container">
         
         <table class="styled-table">
@@ -32,7 +27,16 @@
             <!-- <th>Action</th> --> 
           </tr>
         </thead>
+        <?php 
 
+$datas = $this->result;
+
+if(!empty($datas)){
+  foreach($datas as $data){
+  $inventory_id = $data['inventory_id'];
+  $name= $data['name'];
+  $count= $data['count'];
+?>
         <tbody >
            
           <tr>        

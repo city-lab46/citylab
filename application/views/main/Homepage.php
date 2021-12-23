@@ -53,7 +53,7 @@
 			<div class="hero">
 
 				<ul class="slides">
-					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-7.jpg'?>">
+					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-17.jpg'?>">
 						<div class="container">
 							<div class="slide-content">
 							<h1>Could Your Lab Do More For You?</h1>
@@ -64,7 +64,7 @@
 							</div>
 						</div>
 					</li>
-					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-7.jpg'?>">
+					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-17.jpg'?>">
 						<div class="container">
 							<div class="slide-content">
 							<h1>Could Your Lab Do More For You?</h1>
@@ -74,7 +74,7 @@
 							</div>
 						</div>
 					</li>
-					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-7.jpg'?>">
+					<li data-bg-image="<?php echo BASEURL.'/public/assets/img/image-17.jpg'?>">
 						<div class="container">
 							<div class="slide-content">
                                 <h1>Could Your Lab Do More For You?</h1>

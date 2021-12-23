@@ -1,0 +1,27 @@
+.btn11{
+    position: absolute;
+    bottom: 100px;
+    right: 10%;
+    border-radius: 15px;
+    background-color: #292955;
+    color: white;
+    font-size: 14px;
+    font-weight: 550;
+    border: none;
+    padding: 8px 20px;
+    box-shadow: 0 3px #999;
+  }
+
+  .btn11:hover{
+    background-color: #26A826;
+    color: white;
+  }
+  .btn11:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(1px);
+  }
+
+  .btn11 > i{
+    padding-left: 10px;
+    margin-bottom: -2px;
+  }

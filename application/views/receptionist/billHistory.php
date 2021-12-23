@@ -1,11 +1,12 @@
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/table.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/search.css'?>"/>
 <?php include "components/sidenav.php"; ?>
     
   <div class="main">
-      <div class="search">
+      <div class="searchBox">
         <form action=" " method="post">
           <input type="text" name="search" placeholder="search" >
-          <button type="submit" name="search_btn" class="fabtn" id="searchbtn" ><i class="fa fa-search fa-lg" ></i></button>  
+          <i class="fa fa-search fa-lg" ></i>  
         </form>
       </div>
 

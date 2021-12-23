@@ -59,7 +59,7 @@ class reportModel extends Model{
         return $stmt->fetchAll();
     }
     function getreportDetails(){
-        $query = "SELECT * FROM report ";
+        $query = "SELECT * FROM report";
         $stmt = $this->db->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();

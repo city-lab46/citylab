@@ -17,7 +17,7 @@ class home extends Controller{
             $this->view->render("patient/home", $data);
         }  
          
-        if($_SESSION['title'] == "Doctor" ){
+        if($_SESSION['title'] == "Doctor"){
             $data = [];
             $articles = $this->model->getArticle();
             $data['articles'] = $articles;
@@ -25,7 +25,7 @@ class home extends Controller{
             $this->view->render("doctor/home", $data);
         }   
 
-        if($_SESSION['title'] == "Receptionist" ){           
+        if($_SESSION['title'] == "Receptionist"){           
             
             $this->view->render("receptionist/home");
         } 

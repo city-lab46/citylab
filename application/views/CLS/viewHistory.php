@@ -1,16 +1,18 @@
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/form.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/back.css'?>"/>
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/table.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/search.css'?>"/>
 <?php include "components/sidenav.php"; ?>
 
     <div class="main">
       
-      <div class="search">
+      <div class="searchBox">
         
         <form action=" <?php echo BASEURL.'/report/search'?>" method="post">
-          <input type="text" name="search" placeholder="search" >
-          <button type="submit" name="search_btn" class="fabtn" id="searchbtn" >
+          <input type="search" name="search" placeholder="search" >
+          
             <i class="fa fa-search fa-lg" ></i>
-          </button>
+          
         </form>
       
       </div>
@@ -70,7 +72,7 @@
       </div>
 
     <div class="pages">
-      <a href=" " class="btn1">Back</a>
+      <a href="<?php echo BASEURL.'/report'?>" class="btn11">Back</a>
     </div>
   </div>  
 </div>
