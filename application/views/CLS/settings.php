@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/formInput.css'?>"/>
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/settings.css'?>"/>
-<?php include "components/sidenav.php"; ?>
 
+<?php include "components/sidenav.php"; ?> 
     <div class="main">
 
         <div class="container">
@@ -13,15 +13,16 @@
                     </form>
                 </div>
 
-                <?php $result=$data['result']; ?>
-
+                <?php $result=$data['result']; 
+                ?>
+                
                 <div class="avatar-preview">
                     <div id="imagePreview">
                         <img width="100%" height="100%" src="<?php echo BASEURL; ?>/public/assets/img/profile/<?php if ($result['image']){
                                                                                                                         echo $result['image'];
                                                                                                                     }else{
                                                                                                                         echo "doc.jpg";
-                                                                                                                    } ?>" alt=""/>
+                                                                                                                   } ?>" alt=""/>
                     </div>
                 </div>
             </div>

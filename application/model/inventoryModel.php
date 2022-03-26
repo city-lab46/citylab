@@ -40,10 +40,23 @@ class inventoryModel extends Model{
         
         return $stmt->fetchAll();
     }
-    function getinventoryDetails(){
-        $query = "SELECT inventory_id, name, count FROM inventory ";
+    function getinventoryDetails($offset,$no_of_records_per_page){
+        $query = "SELECT inventory_id, name, count FROM inventory LIMIT $offset,$no_of_records_per_page";
         $stmt = $this->db->prepare($query);
         $stmt->execute();   
         return $stmt->fetchAll();
     }
+    function getNotification(){
+        $query = "SELECT * FROM notification WHERE notification.sender = (SELECT user_id FROM user WHERE title = 'Receptionist') OR notification.sender = (SELECT user_id FROM user WHERE title = 'Admin')ORDER BY notification_id DESC LIMIT 5 ";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    function getCount(){
+        $query = "SELECT * FROM inventory";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();   
+        return $stmt->rowCount();
+    }
+    
 }

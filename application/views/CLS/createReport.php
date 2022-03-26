@@ -10,6 +10,8 @@ if(isset($_GET['patient_id'])){
 
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/form.css'?>"/>
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/back.css'?>"/>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <?php include "components/sidenav.php"; ?>   
 
     <div class="main">
@@ -27,7 +29,7 @@ if(isset($_GET['patient_id'])){
             </div>
           </form>
   
-          <form action="<?php echo BASEURL.'/report/insert'?>">
+          <form action="<?php echo BASEURL.'/report/insert'?>" method="post">
             
             <div class="row">
               <div class="col-25">
@@ -78,7 +80,7 @@ if(isset($_GET['patient_id'])){
             </div>
          
             <div class="row">
-              <input type="submit" value="Submit">
+              <input type="submit" name="submit" value="Submit">
               <input type="submit" name="cancel" value="Cancel">
             </div>
             

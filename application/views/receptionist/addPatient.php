@@ -6,7 +6,7 @@
       <div class="contents">
         <div class="container">
 
-          <form action="">
+          <form action="<?php echo BASEURL.'/patient/submit'?>" method= "post">
 
             <div class="row">
               <div class="col-25">
@@ -67,7 +67,7 @@
                 <label for="confirm_password">Confirm Password</label>
               </div>
               <div class="col-75">
-                <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm password">
+                <input type="password" id="confirm_password" name="confirmPassword" placeholder="confirm password">
               </div>
             </div>
 
@@ -96,7 +96,7 @@
             </div>
 
             <div class="row">
-              <input type="submit" value="Submit">
+              <input type="submit" name="submit" value="Submit">
               <input type="submit" name="cancel" value="Cancel">
             </div>
   

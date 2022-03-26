@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/form.css'?>"/>
-<?php include "components/sidenav.php"; ?> 
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/back.css'?>"/>
+`<?php include "components/sidenav.php"; ?> `
 
 <?php
  
  $datas = $this->result;
- 
+ $report_id = $this->report_id;
 
  if(!empty($datas)){
   foreach($datas as $data){
@@ -21,7 +22,7 @@
       <div class="contents">
         <div class="container">
 
-          <form action="<?php echo BASEURL.'/report/insert'?>">
+          <form action="<?php echo BASEURL.'/report/edit?report_id='.$report_id;?>" method="post">
             <div class="row">
               <div class="col-25">
               <label for="report_id">report Id</label>
@@ -93,7 +94,7 @@
 
                       ?>
             <div class="row">
-              <input type="submit" value="Submit">
+              <input type="submit" name="update" value="update">
               <input type="submit" name="cancel" value="Cancel">
             </div>
             

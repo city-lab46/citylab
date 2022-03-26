@@ -117,9 +117,20 @@
             </ul>
         </div>
         <div id="notification-dropdown" class="dropdown-notification">
-            <ul>
-            <li><a href="#">Notification</a></li>
-            <li><a href="#">Notification</a></li>
-            <li><a href="#">Notification</a></li>
-            </ul>
+        <ul>
+        <?php
+          $datas = $_SESSION['notifications'];
+          if(!empty($datas)){
+            foreach($datas as $data){
+              $title = $data['title'];
+              $message = $data['message'];
+        ?>
+          <li><a href="#"><?php echo $title,"</br>",$message?></a></li>
+          <?php
+            }   
+            }else{
+                echo "No notifications available";
+            }
+    ?>
+        </ul>
         </div>

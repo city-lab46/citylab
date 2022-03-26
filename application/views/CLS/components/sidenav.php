@@ -7,8 +7,9 @@
     <link rel="icon" href="<?php echo BASEURL.'/public/assets/img/favicon.png'?>"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+    
     <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/styles.css'?>"/>
     <script src="<?php echo BASEURL.'/public/assets/js/script.js'?>"></script>
     <title>CityLab</title>
@@ -32,14 +33,14 @@
     <div id="menu">
         <span style="font-size:30px; cursor:pointer" onclick= "openNav()">&#9776;</span>
     </div>
-
+    
     <div class="nav">
         <div class="icon">
             <img width="56px" height="56px" src="<?php echo BASEURL.'/public/assets/img/icon.jpg'?>" alt="">
             <img width="150px" height="25px" src="<?php echo BASEURL.'/public/assets/img/LAB.png'?>" alt="">
         </div>
         <button onclick="dropS()" class="settings"><i class="fas fa-caret-down"></i></button>
-        <button onclick="dropN()" class="notification"><i class="fas fa-bell"></i></button>
+        <button onclick="dropN()" class="notification" ><i class="fas fa-bell"></i></button>
         <div class="username"><?php echo $_SESSION['first_name']." ".$_SESSION['last_name']?></div>
         <div class="profile"><i class="fas fa-user-circle"></i></div>
     </div>
@@ -57,14 +58,26 @@
             <li><i class="fas fa-sign-out-alt icon"></i><a href="<?php echo BASEURL.'/logout'?>">Log Out</a></li>
         </ul>
     </div>
-    <div id="notification-dropdown" class="dropdown-notification">
+    
+    <div id="notification-dropdown" class="dropdown-notification" >
         <ul>
-          <li><a href="#">Notification</a></li>
-          <li><a href="#">Notification</a></li>
-          <li><a href="#">Notification</a></li>
+        <?php
+          $datas = $_SESSION['notifications'];
+          if(!empty($datas)){
+            foreach($datas as $data){
+              $title = $data['title'];
+              $message = $data['message'];
+        ?>
+          <li><a href="#"><?php echo $title,"</br>",$message?></a></li>
+          <?php
+            }   
+            }else{
+                echo "No notifications available";
+            }
+    ?>
         </ul>
     </div>
-
+    
     <div class="sidebar">
         <ul>
             <li class="active">

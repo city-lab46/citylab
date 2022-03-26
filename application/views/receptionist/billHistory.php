@@ -1,106 +1,93 @@
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/table.css'?>"/>
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/search.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/pagination.css'?>"/>
+<script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <?php include "components/sidenav.php"; ?>
     
-  <div class="main">
-      <div class="searchBox">
-        <form action=" " method="post">
-          <input type="text" name="search" placeholder="search" >
-          <i class="fa fa-search fa-lg" ></i>  
-        </form>
-      </div>
-
-      <div class="table-container">
+<div class="main">
+    <div class="container">
+         <div class="searchBox">
+         <input type="search" id="searchText" name="search" placeholder="Search"><i class="fa fa-search"></i></div>
+    
       
         <table class="styled-table">
           <thead>
           <tr>
-            <th>Patient ID</th>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Date</th>
-            <th>Actions </th>
+            
+            <th>Bill ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Total Amount</th>
+            <th>Created Date</th>
+            <th>Created Time</th>
+            
           </tr>
         </thead>
         <tbody >
-        <tr>
-            <td data-label = "patient_id" >P110</td>
-            <td data-label = "name" >V.Hiruni</td>
-            <td  data-label = "amount" >1500.00</td>
-            <td  data-label = "date" >24-08-2021</td>
-            
-            
-            
-            <td data-label = "#">
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td data-label = "patient_id" >P100</td>
-            <td data-label = "name" >M.Nirushan</td>
-            <td  data-label = "amount" >1200.00</td>
-            <td  data-label = "date" >24-08-2021</td>
-            
-            
-            <td data-label = "#">
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td data-label = "patient_id" >P113</td>
-            <td data-label = "name" >R.Sanjith</td>
-            <td  data-label = "amount" >1000.00</td>
-            <td  data-label = "date" >24-08-2021</td>
-            
-            
-            <td data-label = "#">
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td data-label = "patient_id" >P103</td>
-            <td data-label = "name" >K.Sunil</td>
-            <td  data-label = "amount" >800.00</td>
-            <td  data-label = "date" >24-08-2021</td>
-            
-            <td data-label = "#">
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td data-label = "patient_id" >P003</td>
-            <td data-label = "name" >Mr.Kumar</td>
-            <td  data-label = "amount" >500.00</td>
-            <td  data-label = "date" >24-08-2021</td>
-            
-            <td data-label = "#">
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td data-label = "patient_id" >P002</td>
-            <td data-label = "name" >V.Nalin</td>
-            <td  data-label = "amount" >400.00</td>
-            <td  data-label = "date" >24-08-2021</td>
+          <?php
+          $datas = $this->result;
+          if(!empty($datas)){
+            foreach($datas as $data){
+              $bill_id = $data['bill_id'];
+              $first_name = $data['first_name'];
+              $last_name = $data['last_name'];
+              $total_amount = $data['total_payment'];
+              $created_date = $data['created_date'];
+              $created_date  = (string) $created_date;
+              $created_time = (string) $created_date;
+              $created_time = strtotime($created_time);
            
-            <td data-label = "#" class="buttons" >
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
+          ?>
+        <tr id="searchTable">
+            <td><?php echo $bill_id; ?></td>
+            <td><?php echo $first_name; ?></td>
+            <td><?php echo $last_name; ?></td>
+            <td><?php echo $total_amount; ?></td>
+            <td><?php echo date('Y:m:d', strtotime($created_date)); ?></td>
+            <td><?php echo date('H:i:s', $created_time); ?></td>
+            
           </tr>
-        
-        </tbody>
+          <?php
+           }
+          }
+          ?>
+          </tbody>
         </table>
-      </div>
-    
-     
+        <?php 
+          $pageno=$_SESSION['data4']['pageno'];
+          $total_pages=$_SESSION['data4']['pages'];     
+        ?>
 
+        <div class="pagination">
+          <a href="?pageno=1"><<</a></li>
+          <div class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+              <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+          </div>
+          <div><a href="?pageno=<?php echo $paheno; ?>"><?php echo $pageno ?></a></div>
+          <div class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+              <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+          </div>
+          <div><a href="?pageno=<?php echo $total_pages; ?>">>></a></div>
+        </div>
+
+      </div>
+            
     </div>  
 
   
 </body>
+<script>
+$(document).ready(function(){
+    $("#searchText").keyup(function(){
+        _this = this;
+          $.each($("#searchTable tr"), function() {
+             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1){
+                 $(this).hide();
+               }else{
+                 $(this).show();
+              }
+          });
+    });
+});
+
+</script>

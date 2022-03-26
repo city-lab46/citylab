@@ -36,9 +36,9 @@ class settings extends Controller{
             $userId = $_SESSION['user_id'];
 
             $data = [];
-            $result = $this->model->getData($userId);
-            $data['result'] = $result;
-                    
+            $results = $this->model->getData($userId);
+            $data['result'] = $results;
+                  
             $this->view->render("CLS/settings", $data);
         }
     }

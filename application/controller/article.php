@@ -8,14 +8,7 @@ class article extends Controller{
     }
     
     public function index(){
-        /*if($_SESSION['title'] == "Patient" ){
-            $articleId =  $_GET['articleId'];
-            $data = [];
-            $result = $this->model->getArticle($articleId);
-            $data['result'] = $result;
-
-            $this->view->render("patient/article", $data);
-        }*/
+       
 
         if($_SESSION['title'] == "Doctor" ){
             $doctor_id = "D".$_SESSION['user_id'];
@@ -35,16 +28,11 @@ class article extends Controller{
         $doctorId = "D".$_SESSION['user_id'];
 		$title =  $_POST['title'];
         $content =  $_POST['content'];
-
         $target_dir = "../public/assets/img/article/";
         $target_file = $target_dir . basename($_FILES["filename"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         $filename =  $_FILES['filename']['name'];
-        
         move_uploaded_file($_FILES["filename"]["tmp_name"], $target_file);
-        //$timestamp = time();
-        //$image = $doctorId . $timestamp . "." . $imageFileType; //generating an unique name to the image file
-        //rename("../public/assets/img/article/$filename", "../public/assets/img/article/$image"); //adding the generated name to the file
         $result = $this->model->newArticle($doctorId, $title, $content, $filename);
         $this->redirect("article");
         
@@ -70,10 +58,7 @@ class article extends Controller{
         $filename =  $_FILES['filename']['name'];
         
         move_uploaded_file($_FILES["filename"]["tmp_name"], $target_file);
-        //$timestamp = time();
-        //$image = $doctorId . $timestamp . "." . $imageFileType; //generating an unique name to the image file
-        //rename("../public/assets/img/article/$filename", "../public/assets/img/article/$image"); //adding the generated name to the file
-        
+       
 
         $update = $this->model->updateArticle($articleId, $title, $content, $filename);
         echo "<script>alert('Article Updated')</script>";

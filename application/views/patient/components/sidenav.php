@@ -7,6 +7,7 @@
     <link rel="icon" href="<?php echo BASEURL.'/public/assets/img/favicon.png'?>"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
     <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/styles.css'?>"/>
     <script src="<?php echo BASEURL.'/public/assets/js/script.js'?>"></script>
@@ -62,7 +63,7 @@
         </ul>
     </div>
 
-    <div class="sidebar">
+    <div id="mySidebar" class="sidebar">
         <ul>
             <li class="active">
                 <a href="<?php echo BASEURL.'/home'?>"><i class="fas fa-home"></i><span>Home</span></a>

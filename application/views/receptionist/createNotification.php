@@ -5,13 +5,13 @@
     <div class="main">
       <div class="contents">
         <div class="container">
-          <form action="">
+          <form action="<?php echo BASEURL.'/notification/insert'?>" method="post">
             <div class="row">
               <div class="col-25">
                 <label for="Title">Title</label>
               </div>
               <div class="col-75">
-                <input type="text" id="Title" name="Title" placeholder="Enter Title..">
+                <input type="text" id="Title" name="title" placeholder="Enter Title..">
               </div>
             </div>
 
@@ -20,21 +20,14 @@
                 <label for="Message">Mesaage</label>
               </div>
               <div class="col-75">
-                <div class="bar">
-                            <a ><button class="buttoni"><i class="fas fa-bold "></i></button></a>
-                            <a><button class="buttoni"><i class="fas fa-italic"></i></button></a>
-                            <a><button class="buttoni"><i class="fas fa-link"></i></button></a>
-                            <a><button class="buttoni"><i class="fas fa-paperclip"></i></button></a>
-                            <a><button class="buttoni"><i class="fas fa-image"></i></button></a>
-                            <a><button class="buttoni"><i class="fas fa-pen-square"></i></button></a>
-                            </div>
-                            <textarea placeholder="Enter message here..." style="height:200px"></textarea>
+                <textarea type="text" id="message" name="message" placeholder="Enter message.."></textarea>
               </div>
             </div>
-    
+            
+            
             <div class="row">
-              <input type="submit" value="Submit">
-              <input type="submit" value="cancel">
+              <input type="submit" name="submit" value="Submit">
+              <input type="submit" name="cancel" value="cancel">
             </div>
           </form>
         </div>

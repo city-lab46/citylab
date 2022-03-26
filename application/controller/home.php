@@ -25,13 +25,17 @@ class home extends Controller{
             $this->view->render("doctor/home", $data);
         }   
 
-        if($_SESSION['title'] == "Receptionist"){           
-            
+        if($_SESSION['title'] == "Receptionist"){   
+            $_SESSION['notifications'] = $this->model->getNotification();        
+            $this->view->result = $this->model->getBookingDetails();       
+        
             $this->view->render("receptionist/home");
         } 
         
-        if($_SESSION['title'] == "CLS" ){           
-            
+        if($_SESSION['title'] == "CLS" ){    
+            $user_id =  $_SESSION['user_id'];      
+            $_SESSION['notifications'] = $this->model->getNotifications($user_id);
+            $this->view->result = $this->model->getToolCount();
             $this->view->render("CLS/home");
         } 
 

@@ -1,11 +1,20 @@
-.styled-table {
+.container{
   position: absolute;
-  top: 20%;
-  right:27%;
+  top: 5%;
+  
+  padding: 10px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.styled-table {
+  position: relative;
+  top: 15%;
   border-collapse: collapse;
   font-size: 1.2em;
   font-family: sans-serif;
-  min-width: 550px;
+  min-width: 900px;
   box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
   border-radius: 6px;
   margin: 10px;

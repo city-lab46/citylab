@@ -1,13 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 
 .searchBox {
     position: absolute;
-    top: 10%;
-    left: 20%;
-    transform: translate(-50%,-50%);
+    top: 5%;
+    /* transform: translate(-50%,-50%); */
+    background-color: #292955;
+    border-radius: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +18,7 @@
     padding: 0;
     opacity: 0;
     border-radius: 40px;
-    line-height: 40px;
+    line-height: 20px;
     font-size: 18px;
     color: #fff;
     transition: all 1s;
@@ -44,9 +41,11 @@
     color: white;
     cursor: pointer;
     transition: all .5s;
+    display: flex;
+    align-items: center;
 }
 
-.searchBox:hover input{
+.searchBox input{
     width: 240px;
     opacity: 1;
     padding: 10px 20px;

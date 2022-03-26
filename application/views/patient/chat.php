@@ -7,7 +7,10 @@
             <div class="user"></div>
         </div> -->
         <div class="main-container">  
-            <div class="chat-header"></div>
+            <div class="chat-header">
+                <img width="50px" height="50px" src="<?php echo BASEURL.'/public/assets/img/profile/doc.jpg'?>" alt="">
+                <span><?php  echo "&nbsp&nbsp".$data['userDetails'][0][1] ." ". $data['userDetails'][0][2]?></span>
+            </div>
             <div class="chat-container" id="#chat-container">        
                 <?php
                     $chat=$data['chat'];
@@ -22,13 +25,13 @@
                 ?>
 
             </div>
-
-            <form class="message-input-container" action="<?php echo BASEURL.'/chat/send'?>" method="post">        
+            <form class="message-input-container" action="<?php echo BASEURL.'/chat/send'?>" method="post">   
+                <input type="hidden" name="userId" value="<?php echo $data['userDetails'][0][0];?>">     
                 <input class="message-input" type="text" id="message" name="message" placeholder="send message...">
-                <input class="message-submit" type="submit" value="Send">
+                <input class="message-submit" type="submit" value="send">
             </form> 
-
-        </div>               
+            
+        </div>              
     </div>
 
 <!-- 

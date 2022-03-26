@@ -1,107 +1,137 @@
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/table.css'?>"/>
 <link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/search.css'?>"/>
+<link rel="stylesheet" href="<?php echo BASEURL.'/public/assets/css/pagination.css'?>"/>
+
+ <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <?php include "components/sidenav.php"; ?>
 
     <div class="main">
-      <div class="searchBox">
-        <form action="<?php echo BASEURL.'/schedule/search'?> " method="post">
-          <input type="search" name="search" placeholder="search" >
-          <i class="fa fa-search fa-lg" ></i>  
-        </form>
-      </div>
+    <div class="container">
+         <div class="searchBox">
+         <input type="search" id="searchText" name="search" placeholder="Search"><i class="fa fa-search"></i></div>
     
-      <div class="table-container">
+      
      
-        <table class="styled-table">
+        <table class="styled-table" id="searchTable">
           <thead>
+           
           <tr>
             <th>Patient ID</th>
-            <th>Name</th>
+            <th>First Name</th>
+            <th>Last Name</th>
             <th>Date</th>
             <th>Time</th>
             <th>Test Types</th>
-            
             <th>Actions </th>
           </tr>
         </thead>
-
+        
         
           <tbody >
-          <tr>
-            <td data-label = "patient_id" >P110</td>
-            <td data-label = "name" >V.Hiruni</td>
-            <td  data-label = "date" >24-08-2021</td>
-            <td  data-label = "time" >8.00 am</td>
-            <td  data-label = "Test Type" >FBS </td>
+          <?php
             
-            <td data-label = "#">
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td data-label = "patient_id" >P100</td>
-            <td data-label = "name" >M.Nirushan</td>
-            <td  data-label = "date" >24-08-2021</td>
-            <td  data-label = "time" >8.15 am</td>
-            <td  data-label = "Test Type" >Hb </td>
+            $datas = $this->result;
             
-            <td data-label = "#">
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
-          </tr>
+            foreach($datas as $data){
+              $patient_id = $data['patient_id'];
+              $date = $data['booking_date'];
+              $time = $data['booking_time'];
+              $count[$patient_id] = 0;
+              $count[$date] = 0;
+              $count[$time] = 0;
+              
+            }
+
+            if(!empty($datas)){
+              foreach($datas as $data){
+                $patient_id = $data['patient_id'];
+                $date = $data['booking_date'];
+                $first_name = $data['first_name'];
+                $last_name = $data['last_name'];
+                $test = $data['name'];
+                $time = $data['booking_time'];
+                $count[$patient_id] = $count[$patient_id] + 1;
+                $count[$date] = $count[$date] + 1;
+                $count[$time]  = $count[$time]  + 1;
+                if($count[$patient_id]>1 && $count[$date] > 1 && $count[$time] > 1  ){
+                  continue;
+                }
+              
+            ?>
           <tr>
-            <td data-label = "patient_id" >P113</td>
-            <td data-label = "name" >R.Sanjith</td>
-            <td  data-label = "date" >24-08-2021</td>
-            <td  data-label = "time" >9.00 am</td>
-            <td  data-label = "Test Type" >FBS </td>
+            <td><?php echo $patient_id; ?></td>
+            <td><?php echo $first_name; ?></td>
+            <td><?php echo $last_name; ?></td>
+            <td><?php echo $date; ?></td>
+            <td><?php echo $time; ?></td>
+            <td>
+            <?php
+            foreach($datas as $json_arr){ 
+              if($json_arr['patient_id'] == $patient_id && $json_arr['booking_date'] == $date && $json_arr['booking_time'] == $time){ 
+                
+                echo $json_arr['name'] ." <br>";
+                       
+              }
+          
+          }
+          
+            ?>
             
-            <td data-label = "#">
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
+            </td>
+            
+            
+            <td>
+              <a href="<?php echo BASEURL.'/schedule/edit?patient_id='.$data['patient_id'].'&booking_date='.$data['booking_date'].'&booking_time='.$data['booking_time']?>"  class="bttn1"><i class="fas fa-pen-square"></i></a>
+              <a href="<?php echo BASEURL.'/schedule/delete?patient_id='.$data['patient_id'].'&booking_date='.$data['booking_date'].'&booking_time='.$data['booking_time']?>"  onclick="return confirmCancel()"class="bttn2"><i class="fas fa-trash-alt"></i></a>
             </td>
           </tr>
-          <tr>
-            <td data-label = "patient_id" >P103</td>
-            <td data-label = "name" >K.Sunil</td>
-            <td  data-label = "date" >24-08-2021</td>
-            <td  data-label = "time" >9.15 am</td>
-            <td  data-label = "Test Type" >FBS </td>
-            <td data-label = "#">
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td data-label = "patient_id" >P003</td>
-            <td data-label = "name" >Mr.Kumar</td>
-            <td  data-label = "date" >24-08-2021</td>
-            <td  data-label = "time" >11.30 am</td>
-            <td  data-label = "Test Type" >RBC </td>
-            <td data-label = "#">
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
-          </tr>
-          <tr>
-            <td data-label = "patient_id" >P002</td>
-            <td data-label = "name" >V.Nalin</td>
-            <td  data-label = "date" >24-08-2021</td>
-            <td  data-label = "time" >4.30 pm</td>
-            <td  data-label = "Test Type" >RBC </td>
-            <td data-label = "#" class="buttons" >
-              <a href="#"  class="bttn1"><i class="fas fa-pen-square"></i></a>
-              <a href="#"  class="bttn2"><i class="fas fa-trash-alt"></i></a>
-            </td>
-          </tr>
+          <?php
+            }   
+          }else{
+              echo "No bookings available";
+          }
+          ?>
+          
+         
+         
+          
         
         </tbody>
         </table>
+        <?php 
+          $pageno=$_SESSION['data1']['pageno'];
+          $total_pages=$_SESSION['data1']['pages'];      
+        ?>
+
+        <ul class="pagination">
+          <li><a href="?pageno=1"><<</a></li>
+          <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+              <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+          </li>
+          <li><a href="?pageno=<?php echo $paheno; ?>"><?php echo $pageno ?></a></li>
+          <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+              <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+          </li>
+          <li><a href="?pageno=<?php echo $total_pages; ?>">>></a></li>
+        </ul>
+
       
 
-    </div>  
-
-  
+</div>
+</div>
 </body>
+<script>
+$(document).ready(function(){
+    $("#searchText").keyup(function(){
+        _this = this;
+          $.each($("#searchTable tr"), function() {
+             if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1){
+                 $(this).hide();
+               }else{
+                 $(this).show();
+              }
+          });
+    });
+});
+
+</script>

@@ -4,7 +4,9 @@ class inventory extends Controller{
     public function __construct(){
         parent::__construct();
     }
+    
     public function index(){  
+        
         if($_SESSION['title'] == "CLS" ){
             if(isset($_POST['submit'])){
                 if (isset($_POST['name']) && isset($_POST['count']) && isset($_POST['action']) ) {
@@ -80,14 +82,36 @@ class inventory extends Controller{
                 }else{
                     $this->view->render("CLS/addInventory");
                 }
-        }   
+        $this->view->result = $this->model->getNotification();
+        $_SESSION['notifications'] = $this->view->result;
+        
+        } 
+          
         
     }
 
     public function inventoryHistory(){
         //if($_SESSION['title'] == "CLS" )
-        $this->view->result = $this->model->getinventoryDetails();        
+        $data9 = [];
+            if (isset($_GET['pageno'])) {
+                $pageno = $_GET['pageno'];
+            } else {
+                $pageno = 1;
+            }
+            $no_of_records_per_page = 7;
+            $offset = ($pageno-1) * $no_of_records_per_page;
+            $total_rows = $this->model->getCount();
+            $total_pages = ceil($total_rows / $no_of_records_per_page);
+    
+            
+            
+            
+            $data9['pageno'] = $pageno;
+            $data9['pages'] = $total_pages;
+            $_SESSION['data9'] = $data9;
+        $this->view->result = $this->model->getinventoryDetails($offset,$no_of_records_per_page);        
         $this->view->render("CLS/inventoryHistory");
+       
 
     }
     public function updateInventory(){
@@ -96,5 +120,6 @@ class inventory extends Controller{
         $this->view->render("CLS/inventoryHistory");
 
     }
+    
 
 }

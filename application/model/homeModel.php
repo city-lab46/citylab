@@ -19,4 +19,28 @@ class homeModel extends Model{
         $stmt->execute();
         return $stmt->fetchAll();
     }
+    function getBookingDetails(){
+        $query = "SELECT booking_date, booking_time FROM booking WHERE status= 'booked' ";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();   
+        return $stmt->fetchAll();
+    }
+    function getNotification(){
+        $query = "SELECT * FROM notification WHERE notification.sender = (SELECT user_id FROM user WHERE title = 'Receptionist') ORDER BY notification_id DESC LIMIT 5 ";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    function getNotifications($user_id){
+        $query = "SELECT * FROM notification WHERE notification.sender = (SELECT user_id FROM user WHERE title = 'Receptionist') OR notification.receiver = '$user_id' ORDER BY notification_id DESC LIMIT 5 ";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    function getToolCount(){
+        $query = "SELECT name,count FROM inventory";
+        $stmt = $this->db->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }
